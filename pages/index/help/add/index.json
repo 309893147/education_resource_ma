@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "bottom":"/v/bottom-bar/index",
+    "img":"/v/img/index"
+  },
+  "navigationBarTitleText":"一键求助"
+}

@@ -1,0 +1,35 @@
+<view class="s-padding s-size">求助内容</view>
+<view class='s-padding'>
+ <textarea class='font-size-four' style='height:6rem;width:100%;' placeholder='请输入...' placeholder-class='place' bindinput='onContent' maxlength="{{max}}"></textarea>
+</view>
+<view class='s-padding'>
+<view class='flex-row space-between'>
+<view></view>
+<view class='sub-text'>{{content.length}}/{{max}}</view>
+</view>
+<view class='line'></view>
+</view>
+
+<view class='s-padding flex-row space-between'>
+  <view class='section-title'>
+   图片补充
+  </view>
+  <view>{{images.length}}/3</view>
+</view>
+<view class='s-padding wrap'>
+    <view class='relative inline-block' style='height:3.75rem;width:3.75rem;margin-right:.6rem;margin-bottom:.6rem' wx:for="{{images}}">
+    <img sty="height:3.75rem;width:3.75rem;" src="{{item}}"  mode="aspectFill"></img>
+    <image src='/r/circle_delete.png' class="icon arrow" style="position:absolute;right:-0.3rem;top:-0.3rem" bindtap='deleteImage' data-index="{{index}}"></image>
+    </view>
+    <view class='relative inline-block' style='height:3.75rem;width:3.75rem;margin-right:.6rem;margin-bottom:.6rem' wx:if="{{images.length < 3}}">
+    <image src='/r/add_image.png' class='icon' style='height:3.75rem;width:3.75rem;' bindtap='addImage' ></image>
+    </view>
+</view>
+<view class='s-padding'>
+   <view class=' hint-text wrap'>
+  您好，您的需求“小优”将尽快处理。“小优”的工作时间是上午9:00—下午18:00，非工作时间如有紧急事宜请致电客户服务中心。
+</view>
+</view>
+<bottom>
+  <view class='bg-primary text-white center-text  s-size action-bar' bindtap='submit'>提交</view>
+</bottom>

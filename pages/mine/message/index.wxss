@@ -1,0 +1,4 @@
+/* pages/mine/message/index.wxss */
+page{
+  background-color: #f4f4f4;
+}

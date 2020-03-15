@@ -1,0 +1,82 @@
+<import src="../../../../wxParse/wxParse.wxml" />
+
+
+<view class='bg-white s-padding-two'>
+  <view class='flex-row '>
+    <view>类型</view>
+    <view class='h-padding'>{{detail.Type}}</view>
+  </view>
+  <view class='flex-row mt-top'>
+    <view>名称</view>
+    <view class='h-padding'>{{detail.Title}}</view>
+  </view>
+  <view class='flex-row mt-top'>
+    <view>小区</view>
+    <view class='h-padding'>{{detail.XiaoQuName}}</view>
+  </view>
+  <view class='flex-row mt-top'>
+    <view>地址</view>
+    <view class='h-padding'>{{detail.Address}}</view>
+  </view>
+  <view class='flex-row mt-top'>
+    <view>价格</view>
+    <view class='h-padding'>{{detail.JiaGe}}</view>
+  </view>
+  <view class='flex-row mt-top'>
+    <view>面积</view>
+    <view class='h-padding'>{{detail.FangWuArea}}
+    </view>
+  </view>
+  <view class='flex-row mt-top'>
+    <view>房间数</view>
+    <view class='h-padding'>{{detail.FangJianShu}}
+    </view>
+  </view>
+  <view class='flex-row mt-top' >
+    <view>楼层</view>
+    <view class='h-padding'>
+      {{detail.LouCeng}}/{{detail.ZLouCeng}}
+    </view>
+  </view>
+  <view class='flex-row mt-top' >
+    <view>朝向</view>
+    <view class='h-padding'>
+      {{detail.FangXiang}}
+    </view>
+  </view>
+  <view class='flex-row mt-top' >
+    <view>装修</view>
+    <view class='h-padding'>
+      {{detail.ZhuangXiu}}
+    </view>
+  </view>
+</view>
+<view class='line-two'></view>
+<view class='bg-white s-padding '>
+  <view class='vertical-space font-size-four s-size'>经纪人信息</view>
+  <view class='flex-row mt-top'>
+    <view>姓名</view>
+    <view class='h-padding'>{{detail.Name}}</view>
+  </view>
+  <view class='flex-row mt-top align-center'>
+    <view>电话</view>
+    <view class='h-padding' bindtap='callService'>{{detail.Tel}}</view>
+    <view>
+      <view class='btn-primary' style='padding:.2rem .4rem;border-radius:.2rem;'  bindtap='callService'>拨打电话</view>
+    </view>
+  </view>
+</view>
+<view class='line-two'></view>
+<view class='bg-white s-padding '>
+  <view class='vertical-space font-size-four s-size flex-row space-between'>
+    <view>房屋详情</view>
+  </view>
+</view>
+<view class='wrap s-padding'>
+  <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+</view>
+
+<view style='height:5rem;'></view>
+<bottom wx:if="{{detail.tab.SType == 0}}">
+  <view class='bg-primary text-white center-text  s-size action-bar' bindtap='cancel'>取消</view>
+</bottom>

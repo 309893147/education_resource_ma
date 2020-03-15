@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "img":"/v/img/index"
+  },
+  "navigationBarTitleText":"我的"
+  }

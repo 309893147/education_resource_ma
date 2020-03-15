@@ -1,0 +1,34 @@
+/* pages/exam/detail/detail.wxss */
+
+swiper{
+  height: 1000rpx;
+}
+
+swiper-item{
+  margin-left: 40rpx;
+}
+
+.exam-result{
+  color: blue;
+  font-weight: bold;
+}
+
+.exam-title{
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.radio{
+  margin-left: 10rpx;
+  padding: 20rpx;
+  display: block;
+}
+
+button{
+    margin-top: 60rpx;
+}
+
+.right-answer{
+  color: red;
+  font-weight: bold;
+}

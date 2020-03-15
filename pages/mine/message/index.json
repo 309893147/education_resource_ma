@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "img":"/v/img/index"
+  },
+  "navigationBarTitleText":"消息中心",
+      "enablePullDownRefresh": true
+}

@@ -1,0 +1,29 @@
+<!--pages/register/house/index.wxml-->
+<!--pages/register/position/index.wxml-->
+<view class='s-padding-two font-size-four'>
+  <view class='fix-top h-padding-two box-s bg-white'>
+    <view class='flex-row v-padding align-center '>
+      <image class=' icon-right ' style='width:.8rem;height:1rem;background-color:transparent; ' src='/r/location_green.png '></image>
+      <text>{{house[0].ovName}}{{house[0].bid}}</text>
+    </view>
+    <view class='border-bottom '></view>
+  </view>
+  <view style='height:1.7rem;'></view>
+    <view  wx:for="{{house}}" bindtap='checkOne' data-index="{{index}}">
+    <view class='flex-row align-center v-padding space-between'>
+      <view>{{item.roomNum}}</view>
+      <view>
+        <image src='/r/check.png' class='icon arrow' wx:if="{{item.selected}}"></image>
+      </view>
+      
+    </view>
+    <view class='border-bottom '></view>
+    </view>
+    
+</view>
+
+<view style='height:5rem;'></view>
+
+<bottom wx:if="{{selected}}">
+  <button class='color-white bg-primary radius-no' bindtap='confirm'>确定</button>
+</bottom>

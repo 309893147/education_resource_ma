@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText":"忧资源",
+  "usingComponents": {
+    "img":"/v/img/index",
+    "bind":"/v/bind/bind"
+  }
+}

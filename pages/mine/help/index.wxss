@@ -1,0 +1,10 @@
+/* pages/mine/help/index.wxss */
+page{
+  background-color: #f4f4f4;
+}
+.iphone{
+  padding-bottom: 5rem;
+}
+.iphone-no{
+  padding-bottom: 3.25rem;
+}

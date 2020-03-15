@@ -1,0 +1,57 @@
+<!--pages/register/index.wxml-->
+<view class='register h-padding font-size-four' wx:if="{{false}}">
+  <view class='flex-row v-padding flex-between'>
+    <view>已选择身份</view>
+    <view>租户</view>
+  </view>
+  <view class='border-bottom'></view>
+  <view class='mt-top-two'>请上传身份证</view>
+  <view class='flex-row flex-between mt-top'>
+    <view class='img-two'>
+      <image style='width:100%;height:100%;' class='icon' src='/r/idCard_one.png'></image>
+    </view>
+    <view class='img-two'>
+      <image style='width:100%;height:100%' class='icon' src='/r/idCard_two.png'></image>
+    </view>
+  </view>
+  <view class='flex-row flex-between mt-top-two'>
+    <view>请上传雇佣合同</view>
+    <view class='color-one'>0/6</view>
+  </view>
+  <view class='mt-top'>
+    <image class='icon icon-add' src='/r/add_image.png'></image>
+  </view>
+</view>
+
+
+
+<view class='register-fail s-padding-two font-size-four' >
+  <view>认证失败</view>
+  <view class='mt-top font-size-three'>房屋已经添加无需重复添加</view>
+  <view class='border-bottom mt-top-two'></view>
+  <view class='mt-top-two'>真实姓名</view>
+  <view class='border-bottom mt-top-two'></view>
+  <view class='mt-top-two'>电话号码</view>
+  <view class='border-bottom mt-top-two'></view>
+  <view class='mt-top-two'>补充说明</view>
+  <view class='relative'>
+    <textarea placeholder='请输入说明内容' bindinput='getLength' placeholder-class='place' maxlength='200' class='text-gray mt-top-two'></textarea>
+    <text class='register-sum color-one font-size-three'>{{length}}/{{sum}}</text>
+  </view>
+  <view class='mt-top-four'>
+    <button class='color-white bg-primary'>提交</button>
+    <view class='text-center mt-top color-one'>
+      <text>重新提交</text>
+    </view>
+  </view>
+</view>
+
+<view class='register-loading' wx:if="{{false}}">
+  <image class='icon-loading icon' src='/r/register_loading.png'></image>
+  <view>正在认证中，请耐心等待</view>
+  <view class='color-one'>若有疑问请联系小区客户服务中心处理</view>
+</view>
+
+<bottom>
+  <button class='bg-primary color-white radius-no'>提交</button>
+</bottom>

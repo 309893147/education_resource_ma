@@ -1,0 +1,8 @@
+<!--pages/exam/result/result.wxml-->
+<image class="logo" src="/r/finish.png"></image>
+
+<view class="content">
+  <text>提交成功!查看答案,请点击下方按钮</text>
+
+  <button bindtap="queryResult">查看答题情况</button>
+</view>

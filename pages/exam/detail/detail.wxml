@@ -1,0 +1,32 @@
+<!--pages/exam/detail/detail.wxml-->
+<view class="content">
+  <swiper indicator-dots="{{indicatorDots}}">
+  
+    <view wx-for="{{indexs}}">
+      <swiper-item>
+      您选择的答案
+         <view class="exam-result">[D]</view>
+         <view class="exam-title">1.1+1=?</view>
+          <label class="radio" wx-for="">
+            <radio >
+              <text>1</text>
+            </radio>
+          </label>
+
+               <label class="radio" wx-for="">
+            <radio >
+              <text>1</text>
+            </radio>
+          </label>
+
+      <view>正确答案
+          <text class="right-answer">11</text>
+      </view>
+
+      </swiper-item>
+    </view>
+  </swiper>
+
+</view>
+
+<button>返回,重新答题</button>

@@ -1,0 +1,101 @@
+{
+  "pages": [
+
+    "pages/index/index",
+      "pages/index/resource/detail/detail",
+    "pages/exam/detail/detail",
+    "pages/exam/result/result",
+    "pages/exam/exam",
+    "pages/update/update",
+    "pages/guide/index",
+      "pages/mine/index",
+    "pages/index/services/index",
+    "pages/index/near-search/index",
+    "pages/index/resource/editor/editor",
+    "pages/index/near-search/detail/index",
+    "pages/mine/about/index",
+    "pages/mine/qa/index",
+    "pages/mine/information/index",
+    "pages/mine/compliant/index",
+    "pages/mine/compliant/add/index",
+    "pages/mine/compliant/detail/index",
+    "pages/mine/house/index",
+    "pages/mine/house/people/index",
+    "pages/mine/complaints/index",
+    "pages/mine/complaints/detail/index",
+    "pages/mine/complaints/add/index",
+    "pages/mine/help/index",
+    "pages/mine/help/detail/index",
+    "pages/login/index",
+    "pages/login/register/index",
+    "pages/index/help/index",
+    "pages/index/help/add/index",
+    "pages/index/appointment/index",
+    "pages/index/appointment/add/index",
+    "pages/index/appointment/detail/index",
+    "pages/index/house/index",
+    "pages/index/house/add/index",
+    "pages/index/house-buy/index",
+    "pages/index/notice/index",
+    "pages/index/notice/detail/index",
+    "pages/index/house/detail/index",
+    "pages/mine/compliant/review/index",
+    "pages/mine/message/index",
+    "pages/register/index",
+    "pages/register/area/index",
+    "pages/register/community/index",
+    "pages/register/building/index",
+    "pages/register/house/index",
+    "pages/register/type/index",
+    "pages/payment/select/index",
+    "pages/payment/index",
+    "pages/payment/status/index",
+    "pages/payment/commodity/index",
+    "pages/payment/type/index",
+    "pages/index/banner/index",
+    "pages/payment/bill/index",
+    "pages/payment/bill/history/index",
+    "pages/index/house-buy/agent/index",
+    "pages/index/house-buy/detail/index",
+    "pages/index/house-buy/add/index",
+    "pages/update/tree/tree",
+    "pages/mine/pay-record/index",
+    "pages/mine/manager/manager",
+    "pages/index/resource/index"
+  
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wxe7cd2eb305a7a195"
+  ],
+  "tabBar": {
+    "selectedColor": "#333333",
+    "color": "#9B9B9B",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/r/index.png",
+        "selectedIconPath": "/r/index_focus.png"
+      },
+      {
+        "pagePath": "pages/guide/index",
+        "text": "往期精选",
+        "iconPath": "/r/guide.png",
+        "selectedIconPath": "/r/guide_focus.png"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "text": "我的",
+        "iconPath": "/r/mine.png",
+        "selectedIconPath": "/r/mine_focus.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

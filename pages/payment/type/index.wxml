@@ -1,0 +1,10 @@
+<!--pages/payment/type/index.wxml-->
+<view class='v-padding-two'>
+  <view class='flex-row font-size-five align-center h-padding flex-between'>
+    <view>
+      缴费单位
+    </view>
+    <image class='icon arrow' src='/r/arrow_right.png'></image>
+  </view>
+  <view class='border-bottom'></view>
+</view>

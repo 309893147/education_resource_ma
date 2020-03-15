@@ -1,0 +1,13 @@
+<view class="s-padding">
+  <view class='section-title' style='margin-left:.45rem;'>猜你想问</view>
+  <view class='v-padding flex-row flex-wrap'>
+     <view class='col-2 item wrap center-text' wx:for="{{problem}}" bindtap='openItem' data-index="{{index}}" bindtap='openQA'>
+       <view style='border:1px solid rgba(77,171,108,1);padding:.5rem 0' class='round s-size'>
+         {{item.Title}}
+       </view>
+     </view>
+  </view>
+</view>
+<bottom>
+<view class='bg-primary text-white center-text  s-size action-bar' bindtap='callService'>联系客服</view>
+</bottom>

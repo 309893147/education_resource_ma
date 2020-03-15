@@ -1,0 +1,9 @@
+page{
+  padding: 2rem 2.3125rem 2.3125rem 2.3125rem;
+}
+
+.logo{
+  width: 5.625rem;
+  height: 6.5rem;
+  margin-bottom: 2.625rem;
+}

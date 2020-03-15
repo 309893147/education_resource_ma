@@ -1,0 +1,8 @@
+<view class="center-text">
+  <image src="/r/logo.png" class="icon logo"></image>
+</view>
+<view class='wrap'>
+打造为物业服务智能化的服务管理工具，物业服务线上平台，社区生活服务线上平台。主要功能有：物业服务工程整改线上流程、物业服务业主投诉线上流程、业主报事线上流程、公司指令任务线上流程、门岗线上查询业主姓名电话、公司公告通知线上发布、项目车位信息等功能。特点为：将目前物业服务的各种线下流程逐步融入到线上平台，从而打造智能便捷的物业服务线上平台。                        
+</view>
+
+<view class='hint-text center-text' style='margin-top:9.25rem;' wx:if="{{community && community.Tel}}"> 客服电话：{{community.Tel}}</view>

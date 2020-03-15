@@ -1,0 +1,20 @@
+/* pages/exam/exam.wxss */
+.exam-title{
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.radio{
+  padding: 20rpx;
+  display: block;
+}
+
+.exam-item{
+  color: #919191;
+}
+
+.exam-btn{
+  width: 90%;
+  position: fixed;
+  bottom:  20rpx;
+}

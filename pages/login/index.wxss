@@ -1,0 +1,18 @@
+/* pages/login/index.wxss */
+
+.tab-item{
+  padding: .4rem .6rem .6rem .4rem;
+  font-size: 1rem;
+
+}
+.selected{
+  padding: .4rem .6rem;
+  color: #4dab6c;
+  border-bottom:  solid .2rem #4dab6c;
+}
+
+input{
+  height: 2rem;
+  font: 1.6rem;
+  margin: .4rem .2rem;
+}

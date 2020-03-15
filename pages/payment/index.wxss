@@ -1,0 +1,36 @@
+/* pages/payment/index.wxss */
+page{
+  background-color:   #f4f4f4;
+}
+.money {
+  border: 1px solid rgba(207, 207, 207, 1);
+  border-radius: 5px;
+  font-size: 0.875rem;
+  font-weight: normal;
+  color: rgba(51, 51, 51, 1);
+  width: 4.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.active {
+  color: white;
+  background-color: rgba(77, 171, 108, 1);
+}
+
+.money-input {
+  border: 1px solid rgba(207, 207, 207, 1);
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.4rem;
+  font-size: 0.875rem;
+  margin-top: 0.8rem;
+}
+
+.money-place {
+  font-size: 0.875rem;
+  font-weight: normal;
+  color: rgba(51, 51, 51, 1);
+}

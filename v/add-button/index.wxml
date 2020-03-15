@@ -1,0 +1,6 @@
+<!-- <image src="/r/add_button.png"></image> -->
+
+<view style='height:6rem;'></view>
+<bottom>
+    <button class='color-white bg-primary radius-no' wx:if="{{title}}">{{title}}</button>
+</bottom>

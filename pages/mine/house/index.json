@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "add": "/v/add-button/index"
+  },
+  "navigationBarTitleText":"我的房屋",
+    "enablePullDownRefresh": true
+}

@@ -1,0 +1,15 @@
+<!--pages/index/resource/index.wxml-->
+
+<block wx:for="{{resource}}" wx:for-item="item" wx:for-index="idx" wx:key="this">
+  <view id="tapTest" data-id="{{item.id}}" data-content="{{item.content}}" bindtap="goDetailList">
+    <view class="post-container">
+      <text class='post-title'>{{item.title}}</text>
+      <text class='post-content'>{{item.description}}</text>
+      <view class='tool'>
+        <text class='post-date'>{{item.createTime}}</text>
+        <text class='post-views'>喜欢{{item.likes}}次</text>
+        <view class='horizon'></view>
+      </view>
+    </view>
+  </view>
+</block>

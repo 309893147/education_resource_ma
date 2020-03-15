@@ -1,0 +1,32 @@
+<view class='bg-white'>
+  <!-- <view class="s-padding" style='box-sizing:content-box;overflow-x: scroll'>
+    <image class='header-image round' wx:for="1232dfdf"></image>
+  </view> -->
+  <view class='h-padding'>
+    <view class='s-size'>{{detail.Name}}</view>
+    <view class='hint-text flex-row align-center v-padding' wx:if="{{detail}}">
+      <image class='icon arrow' src='/r/work_clock.png'></image>
+      <view class='h-padding flex-one'>{{detail.Detail_info.Tag}}</view>
+    </view>
+    <view class='line'></view>
+    <view class='hint-text flex-row align-center v-padding'>
+      <image class='icon arrow' src='/r/near_location.png'></image>
+      <view class='h-padding flex-one'>{{detail.Province}}{{detail.City}}{{detail.Area}}{{detail.Address}}</view>
+    </view>
+    <view class='line'></view>
+    <view class='hint-text flex-row align-center v-padding'>
+      <image class='icon arrow' src='/r/near_phone.png'></image>
+      <view class='h-padding flex-one' bindtap='call'>{{detail.Telephone}}</view>
+    </view>
+  </view>
+</view>
+<view class='vertical-space'></view>
+<view class='bg-white s-padding'>
+  <view class='flex-row align-center space-between' bindtap='nav'>
+    <view class='s-size'>去这里</view>
+    <image class='icon arrow' src='/r/arrow_right.png'></image>
+  </view>
+  <view style='margin-top:1.625rem'>
+  <map style='width:100%;height:8.125rem' longitude="{{detail.Location.Lng}}" latitude="{{detail.Location.Lat}}" markers="{{markers}}"></map>
+  </view>
+</view>

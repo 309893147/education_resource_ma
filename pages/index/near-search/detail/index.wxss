@@ -1,0 +1,10 @@
+/* pages/index/near-search/detail/index.wxss */
+page {
+  background: #f4f4f4;
+}
+.header-image{
+  width: 6.25rem;
+  height: 6.25rem;
+  
+  margin-right: 0.625rem;
+}

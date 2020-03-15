@@ -1,0 +1,16 @@
+<!--pages/register/type/index.wxml-->
+<view class='h-padding-two font-size-four'>
+  <!-- <view class=''>
+    <view class='flex-row align-center h-padding'>
+      <image class=' icon-right ' style='width:.8rem;height:1rem;background-color:transparent; ' src='/r/location_green.png '></image>
+      <text>四川-成都</text>
+    </view>
+    <view class='border-bottom '></view>
+  </view> -->
+    <view wx:for="{{address}}">
+    <view class='flex-row align-center v-padding'>
+      <text>{{item.name}}</text>
+    </view>
+    <view class='border-bottom '></view>
+  </view>
+</view>

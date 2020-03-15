@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "tab": "/v/tab/index",
+    "add": "/v/add-button/index"
+  },
+  "navigationBarTitleText": "房屋租售",
+  "enablePullDownRefresh": true
+}

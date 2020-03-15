@@ -1,0 +1,52 @@
+
+<!--pages/payment/index.wxml-->
+<view class='s-padding bg-white'>
+  <view class='flex-row flex-between font-size-four title align-center mt-top'>
+    <view class='hint-text'>户主名称</view>
+    <view wx:if="{{!loading}}">{{hostName || house.name || house.nickName}}</view>
+  </view>
+  <view class='flex-row flex-between font-size-four title mt-top'>
+    <view class='hint-text'>小区信息</view>
+    <view>{{house.ovName+house.bid}}</view>
+  </view>
+  <view class='flex-row flex-between font-size-four title mt-top'>
+    <view class='hint-text'>门牌号</view>
+    <view>{{house.roomNum}}</view>
+  </view>
+  <block wx:if="{{bill && bill.length}}">
+  <view class='v-padding'>
+  <view class='line'></view>
+  </view>
+  <view class='flex-row space-between font-size-four'  bindtap='checkAll'>
+  <view><text class='hint-text'>未缴纳金额合计:</text> {{total.total}}元</view>
+  <view>全选 <checkbox  checked="{{total.total === selected.total}}" class='h-padding'/></view>
+  </view>
+  </block>
+</view>
+<view wx:if="{{bill && bill.length}}" class='s-padding'>
+  <view class='round bg-white vertical-space s-padding relative' wx:for="{{bill}}" data-index='{{index}}' bindtap='checkItem'>
+
+       <view>{{item.Name}}</view>
+       <view class='flex-row'><view>费用: {{item.Amount}}</view><view class='h-padding'>滞纳金: <text class='color-red'>{{item.LateFee}}</text></view></view>
+       <view>{{item.Desc}}</view>
+       <view class='hint-text'>{{item.project}} {{item.build}} {{item.houseName}}</view>
+       <view style='position:absolute;right:.6rem;top:.6rem;'>
+         <checkbox  checked="{{item.checked}}"/>
+        
+       </view>
+  </view>
+</view>
+<view wx:else>
+   <view class='center-text s-padding hint-text' style='height:10rem;line-height:10rem' wx:if="{{!loading}}">暂无账单</view>
+   <view class='center-text s-padding hint-text' style='height:10rem;line-height:10rem' wx:if="{{loading}}">账单获取中...</view>
+</view>
+
+<view style='height:5rem;'></view>
+
+
+
+<bottom wx:if="{{selected.total > 0}}">
+
+    <view class='bg-primary text-white center-text  s-size action-bar' bindtap='openDetail'>立即缴费({{selected.total}}元)</view>
+
+</bottom>

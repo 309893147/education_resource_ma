@@ -1,0 +1,26 @@
+<!--pages/goods/goods.wxml-->
+
+<form bindsubmit="formSubmit">
+  <view class="classname">
+
+    <view class="myview">
+      <view class="left1">用户名 :</view>
+      <view class="right1">
+        <input value="" name="mobile" placeholder="建议输入手机号码" />
+      </view>
+    </view>
+    <view class="myview">
+      <view class="left1">密码 :</view>
+      <view class="right1">
+        <input value="" name="password" placeholder="建议输入6位以上密码" />
+      </view>
+    </view>
+
+   
+  </view>
+
+
+  <!-- 插入用户id -->
+  <!-- <input name="userId" hidden='{{true}}' value="{{userId}}" /> -->
+  <button class='addBtn' form-type="submit" >提交申请</button>
+</form>

@@ -1,0 +1,7 @@
+/* pages/payment/status/index.wxss */
+.money-loading{
+  position: absolute;
+  top: 20%;
+  text-align: center;
+  width: 100%;
+}

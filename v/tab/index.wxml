@@ -1,0 +1,18 @@
+<view class="flex-row space-between  text-sec align-center font-size-four">
+  <view class='item flex-one relative' wx:for="{{tabs}}" data-index="{{index}}" bindtap='onItem'>
+    <view class='title {{item.active?"tab-active":""}}'>
+      {{item.name}}
+      
+    </view>
+    <view class='indicator' wx:if="{{item.active}}"></view>
+  </view>
+</view>
+
+<!-- <view wx:for="{{tabs}}">
+  <view wx:for="{{item.list}}" wx:for-item="it" wx:if="{{item.status ===1}}">
+     <view>
+       <view>姓名:</view>
+       <view>{{it.name}}</view>
+     </view>
+  </view>
+</view> -->

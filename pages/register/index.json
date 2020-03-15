@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "bottom":"/v/bottom-bar/index"
+  },
+  "navigationBarTitleText":"注册"
+}

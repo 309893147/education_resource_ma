@@ -1,0 +1,29 @@
+<!--pages/exam/exam.wxml-->
+<view class="content">
+
+<view class="exam-title">1. 1+1 =?</view>
+
+<radio-group bindchange="radioChange">
+  <!--单选项-->
+  <label class="radio">
+    <radio value="1"></radio>
+    <text class="exam-item">1</text>
+  </label>
+   <label class="radio">
+    <radio value="1"></radio>
+        <text class="exam-item">1</text>
+  </label>
+  <label class="radio">
+    <radio value="1"></radio>
+        <text class="exam-item">1</text>
+  </label>
+  <label class="radio">
+    <radio value="1"></radio>
+        <text class="exam-item">1</text>
+  </label>
+
+
+</radio-group>
+</view>
+
+<button class="exam-btn" bindtap="exam">下一题</button>

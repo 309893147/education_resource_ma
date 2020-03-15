@@ -1,0 +1,64 @@
+<view class='bg-white s-padding font-size-three'>
+  <view class='vertical-space font-size-four wrap'>{{compliant.context}}</view>
+  <view>
+    <view wx:for="{{compliant.pic}}">
+      <img src="{{item}}" mode="widthFix" wx:if="{{item}}"></img>
+    </view>
+  </view>
+  <view class='flex-row v-padding' wx:if="{{compliant.commName}}">
+    <view class='hint-text'>发起人:</view>
+    <view class='h-padding'>{{compliant.commName}}</view>
+  </view>
+  <view class='flex-row v-padding' wx:if="{{compliant.querName}}">
+    <view class='hint-text'>派单人:</view>
+    <view class='h-padding'>{{compliant.querName}}</view>
+  </view>
+  <view class='flex-row v-padding' wx:if="{{compliant.commName}}">
+    <view class='hint-text'>处理人:</view>
+    <view class='h-padding'>{{compliant.commName}}</view>
+  </view>
+
+  <view class='hint-text'>提交时间: {{compliant.time}}</view>
+</view>
+<view class='v-padding'></view>
+<view class='bg-white s-padding s-size vertical-space'>
+  <view class='vertical-space font-size-four'>当前状态</view>
+  <block wx:if="{{type ==='help'}}">
+    <view class='flex-row vertical-space hint-text'>
+      <block wx:if="{{compliant.status ===0 }}">待处理</block>
+      <block wx:if="{{compliant.status ===1 }}">待处理</block>
+      <block wx:if="{{compliant.status ===2 }}">处理中</block>
+      <block wx:if="{{compliant.status ===6 || compliant.status === 5 }}">已处理</block>
+      <text wx:if="{{compliant.status === 7 }}" class='hint-text'>已取消</text>
+    </view>
+  </block>
+  <block wx:else>
+    <view class='flex-row vertical-space hint-text'>
+      <block wx:if="{{compliant.status ===1 }}">待处理</block>
+      <block wx:if="{{compliant.status ===2 }}">处理中</block>
+      <block wx:if="{{compliant.status ===3}}">已处理</block>
+      <block wx:if="{{compliant.status ===4 || compliant.status === 5 }}">已取消</block>
+    </view>
+  </block>
+</view>
+
+<view class='bg-white s-padding ' wx:if="{{compliant.log}}">
+  <view class='vertical-space font-size-four s-size'>处理过程</view>
+  <view wx:for="{{compliant.plog}}">
+    <view>{{item.evalCotext}}</view>
+    <view class='hint-text'>{{item.AddTime}}</view>
+    <view class='v-padding'>
+      <view class='line'></view>
+    </view>
+  </view>
+</view>
+<view style='height:6rem;'></view>
+<bottom>
+  <block wx:if="{{type === 'help'}}">
+    <view class='bg-primary text-white center-text  s-size action-bar' bindtap='callService' wx:if="{{(compliant.status === 5 || compliant.status ===6) && compliant.isComment === 0}}">立即评价</view>
+  </block>
+  <block wx:else>
+    <view class='bg-primary text-white center-text  s-size action-bar' bindtap='callService' wx:if="{{compliant.status ===3 && compliant.isComment === 0}}">立即评价</view>
+  </block>
+  <view class='bg-primary text-white center-text  s-size action-bar' bindtap='cancel' wx:if="{{compliant.status ===1 }}">取消</view>
+</bottom>

@@ -1,0 +1,17 @@
+<view class='s-padding'>
+  <view wx:for="{{list}}">
+    <navigator url='detail/index?id={{item.id}}&time={{item.SendTime}}' hover-class='none'>
+      <view class='s-padding'>
+        <!-- <view class='flex-col space-between wrap'> -->
+          <view class='section-title v-text-space'>{{item.title}}</view>
+          <view class='flex-row flex-between text-nowrap'>
+            <view class='hint-text'>{{item.SendTime}}</view>
+            <view class='hint-text' >阅读量:{{item.readNum}}</view>
+          </view>
+        <!-- </view> -->
+
+      </view>
+    </navigator>
+    <view class='line'></view>
+  </view>
+</view>

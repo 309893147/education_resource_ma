@@ -1,0 +1,4 @@
+<view class="fix-bottom {{isIPhoneX?'bg-white':''}}">
+  <slot></slot>
+  <view wx:if="{{isIPhoneX}}" style='height:68rpx;'></view>
+</view>

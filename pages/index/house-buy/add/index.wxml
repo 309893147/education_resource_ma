@@ -1,0 +1,55 @@
+<view class='h-padding'>
+  <view class='v-padding flex-row align-center font-size-four'>
+    <view>姓名</view>
+    <input class='flex-one text-right font-size-four' placeholder='请输入' value="{{data.name}}" placeholder-class='place' data-key='name' bindinput='getValue'></input>
+  </view>
+  <view class='line'></view>
+</view>
+
+<!-- <view class='h-padding'>
+  <view class='v-padding flex-row align-center font-size-four'>
+    <view>地址</view>
+    <input class='flex-one text-right font-size-four' placeholder='请输入' value="{{houseInfo.address}}" placeholder-class='place' data-key='address' bindinput='getValue'></input>
+  </view>
+  <view class='line'></view>
+</view> -->
+<view class='h-padding'>
+  <view class='v-padding flex-row align-center font-size-four'>
+    <view>联系电话</view>
+    <input class='flex-one text-right font-size-four' placeholder='请输入' placeholder-class='place' value="{{data.tel}}" data-key='tel' bindinput='getValue'></input>
+  </view>
+  <view class='line'></view>
+</view>
+
+<view class='h-padding'>
+  <view class='v-padding flex-row align-center font-size-four'>
+    <view>房屋面积</view>
+    <input class='flex-one text-right font-size-four' placeholder='请输入' value="{{data.area}}" placeholder-class='place' data-key='area' bindinput='getValue'></input>
+  </view>
+  <view class='line'></view>
+</view>
+<view class='h-padding '>
+  <view class='v-padding flex-row space-between align-center font-size-four'>
+    <view>预期地段</view>
+     <input class='flex-one text-right font-size-four' placeholder='请输入' value="{{data.title}}" placeholder-class='place' data-key='title' bindinput='getValue'></input>
+  </view>
+  <view class='line'></view>
+</view>
+<view class='h-padding'>
+  <view class='v-padding flex-row align-center font-size-four'>
+    <view>预期价格</view>
+    <input class='flex-one text-right font-size-four' placeholder='请输入' value="{{houseInfo.price}}" placeholder-class='place' data-key='price' bindinput='getValue'></input>
+  </view>
+  <view class='line'></view>
+</view>
+
+<!-- <view class="place text-center " >
+  <text>置业顾问电话：</text>
+  <text>121313131</text>
+</view> -->
+   <view class='s-padding hint-text wrap'>
+  您好，您的需求“小优”将尽快处理。“小优”的工作时间是上午9:00—下午18:00，非工作时间如有紧急事宜请致电客户服务中心。
+</view>
+<bottom>
+  <view class='bg-primary text-white center-text  s-size action-bar' bindtap='submit'>提交</view>
+</bottom>

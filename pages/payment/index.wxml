@@ -1,0 +1,52 @@
+<!--pages/payment/index.wxml-->
+<view class='bg-white'>
+<view class='s-padding'>
+<view class='vertical-space'>
+  账单总金额: {{total.total}}元
+  </view>
+  <view>
+  费用: {{total.Amount}}元  <text class='h-padding'>滞纳金: {{total.LateFee}}元</text>
+  </view>  
+</view>
+<view class='line'></view>
+<view class='s-padding vertical-space'>
+  <view class='v-padding' class='hint-text'>账单详情</view>
+  <view class='font-size-four title  mt-top' wx:for="{{bill}}">
+         <view >{{item.Name}}</view>
+       <view class='flex-row v-padding'><view>费用: {{item.Amount}}</view><view class='h-padding'>滞纳金: <text class='color-red'>{{item.LateFee}}</text></view></view>
+       <view class='hint-text'>{{item.Desc}}</view>
+       <view class='hint-text'>{{item.UntiName}}{{item.bid}}</view>
+       <view class='v-padding'>
+       <view class='line'></view>
+       </view>
+  </view>
+</view>
+<view class='s-padding' wx:if="{{order && order.status === 1}}">
+  <view class='line'></view>
+  <view class='s-padding'></view>
+  <view class='text-hint'>该账单已支付</view>
+  <view class='flex-row color-one flex-between mt-top' wx:if="{{order.out_trade_no}}">
+    <view>订单号</view>
+    <view class='flex-one text-right'>
+      {{order.out_trade_no}}
+    </view>
+  </view>
+</view>
+</view>
+<!-- <view class='line-two'></view>
+<view class='s-padding'>
+  <view class='font-size-four'>充值金额</view>
+  <view class='mt-top flex-row flex-wrap flex-between'>
+    <view class='money {{moneyIndex==index?"active":""}}' bindtap='selectMoney' data-index="{{index}}" wx:for="{{money}}">{{item}}元</view>
+  </view>
+  <view class='money-input flex-row flex-between'>
+    <input class='flex-one' bindfocus='clearSelect' placeholder-class="money-place" placeholder='自定义金额' bindinput="onMoney" value='{{inputMoney}}' type='number'></input>
+    <view>元</view>
+  </view>
+</view> -->
+<view style='height:4rem;'></view>
+<bottom>
+  <view  wx:if="{{order != null && order.status !== 1}}">
+  <button class='bg-primary color-white radius-no' bindtap='submit'>立即缴费</button>
+</view>
+</bottom>

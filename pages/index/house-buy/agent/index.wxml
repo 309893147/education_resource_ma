@@ -1,0 +1,23 @@
+
+<view wx:for="{{infoAll}}" class='h-padding-two'>
+  <view class='h-padding'>
+    <view class='flex-row align-center flex-between mt-top-three'>
+      <view class='flex-row align-center'>
+        <image src='/r/house_head.png' class='icon arrow icon-space'></image>
+        <view>置业顾问: {{item.Name}}</view>
+      </view>
+      <view class='flex-row align-center '>
+        <image src='/r/house_phone.png' class='icon arrow icon-space'></image>
+        <view>联系电话: {{item.Tel}}</view>
+      </view>
+    </view>
+    <view style='height:.5rem'></view>
+    <view class='flex-row align-center'>
+      <view class='flex-row align-center flex-one'>
+        <image src='/r/house_area.png' class='icon arrow icon-space'></image>
+        <view>负责片区: {{item.VillageMsg.name}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='line mt-top-three'></view>
+</view>

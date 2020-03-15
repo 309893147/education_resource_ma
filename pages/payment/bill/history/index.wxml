@@ -1,0 +1,4 @@
+<view wx:for="{{history}}">
+  <view></view>
+  
+</view>

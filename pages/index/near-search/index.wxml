@@ -1,0 +1,60 @@
+<view class='flex-row s-padding bg-white'>
+
+  <view class='flex-one search-wrapper flex-row align-center round v-padding h-padding'>
+    <image src='/r/search.png' class='icon'></image>
+    <input class='flex-one h-padding' placeholder='搜索周边' bindinput='onKeyword' bindconfirm='search' value='{{KeyWord}}'></input>
+  </view>
+
+  <view class='s-padding color-primary' hover-class='hint-text' bindtap='cancel'>
+  {{KeyWord?'搜索':'取消'}}
+  </view>
+</view>
+
+<view class='s-padding' wx:if="{{list && list.length}}">
+
+  <view class='search-item round bg-white s-padding vertical-space' wx:for="{{list}}">
+    <navigator url='detail/index?id={{item.Uid}}' class='relative' hover-class='none'>
+
+    <view class='flex-row space-between'>
+    <view>
+    <view class='wrap'>{{item.Name}}</view>
+    <!-- <view class='hint-text flex-row align-center'>
+      <image class='icon arrow' src='/r/work_clock.png'></image>
+      <view class='h-padding'>办公中，09：00-12:00 , 14:00-17:30</view>
+    </view> -->
+    <view class='hint-text flex-row align-center v-padding'>
+      <image class='icon arrow' src='/r/near_location.png'></image>
+      <view class='h-padding wrap'>{{item.Detail_info.Distance}}m    {{item.Address}}</view>
+    </view>
+    </view>
+    <view class='flex-col space-between'>
+    <view></view>
+    <view class='flex-row'>
+        <image src='/r/near_call.png' class='icon action' catchtap='call' data-phone="{{item.Telephone}}"></image>
+        <image src='/r/near_nav.png' class='icon action' catchtap='nav' data-index="{{index}}"></image>
+    </view>
+    </view>
+    </view>
+    </navigator>
+  </view>
+</view>
+
+<view class='s-padding bg-white' wx:if="{{!Keyword && !list.length && history.length}}">
+  <view class='flex-row space-between'>
+    <view class='title'>历史搜索</view>
+    <view bindtap='deleteHistory'>
+      <image src='/r/delete.png' class='icon arrow'></image>
+    </view>
+  </view>
+  <view class='s-padding'></view>
+  <view class='' wx:for="{{history}}">
+    <view bindtap='doSearch' data-keyword="{{item}}">
+      {{item}}
+    </view>
+    <view class='v-padding'>
+      <view class='line'></view>
+    </view>
+  </view>
+</view>
+
+<view class='caption' wx:if="{{!list || list.length==0}}">使用“便民查询”带你搜罗周边美食、娱乐、房产等信息，包罗万象，一搜百应！</view>

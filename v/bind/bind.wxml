@@ -1,0 +1,10 @@
+<!--v/bind/bind.wxml-->
+<view class='modal-bind' wx:if="{{show}}" catchtap='close'>
+  <view class='bind-content' catchtap='show'>
+    <view class='bind-item color-one'>请先绑定房屋！</view>
+  <view class='border-bottom'></view>
+  <navigator class='bind-item'  catchtap='goBind'>去绑定</navigator>
+  <view class='line-two'></view>
+  <view class='bind-item' catchtap='close'>取消</view>  
+  </view>
+</view>

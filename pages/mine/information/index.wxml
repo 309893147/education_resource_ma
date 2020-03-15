@@ -1,0 +1,50 @@
+<!--pages/mine/information/index.wxml-->
+
+<view class="flex-row space-between align-center v-padding h-margin border-bottom" bindtap='selectAvatar'>
+  <view>头像</view>
+  <view class='flex-row  align-center'>
+    <img clazz="radius-round avatar" src="{{information.avatarUrl}}"></img>
+    <!-- {{infor}} -->
+    <image class='arrow' src='/r/arrow_right.png' style='background:none;'></image>
+  </view>
+</view>
+<view class="flex-row space-between align-center v-padding h-margin border-bottom">
+  <view>姓名</view>
+  <input placeholder='未填写' placeholder-class='place-color'  value="{{information.nickName}}" bindinput='getValue' data-name="nickName"></input>
+</view>
+<view class="flex-row space-between align-center v-padding h-margin border-bottom" bindtap='selectSex'>
+  <view>性别</view>
+  <view class='flex-row align-center'>
+    <view>{{information.gender }}</view>
+    <image class='arrow' src='/r/arrow_right.png' style='background:none;'></image>
+  </view>
+</view>
+<view class="flex-row space-between align-center v-padding h-margin border-bottom">
+  <view>年龄</view>
+  <input placeholder='未填写' placeholder-class='place-color'  value="{{information.age}}" bindinput='getValue' data-name="age" type='number'>{{item.value}}</input> 
+</view>
+<view class="flex-row space-between align-center v-padding h-margin border-bottom">
+  <view>手机</view>
+  <input placeholder='未填写' placeholder-class='place-color'  value="{{information.mobile}}" bindinput='getValue' data-name="mobile" type='number'>{{item.mobile}}</input>
+</view>
+<!-- <view class="flex-row space-between align-center v-padding h-margin ">
+  <view>身份认证</view>
+  <view>{{information.prove?'认证成功':'未认证'}}</view>
+</view> -->
+<view class='line-two'></view>
+<view class="flex-row space-between align-center v-padding h-margin border-bottom">
+  <view>QQ</view>
+  <input placeholder='未填写' placeholder-class='place-color'  value="{{information.qq}}" bindinput='getValue' data-name="qq">{{item.value}}</input>
+</view>
+<view class="flex-row space-between align-center v-padding h-margin border-bottom">
+  <view>邮箱</view>
+  <input placeholder='未填写' placeholder-class='place-color'  value="{{information.email}}" bindinput='getValue' data-name="email">{{item.value}}</input>
+
+</view>
+<view class='fix-bottom'>
+  <bottom>
+    <button bindtap='submit' class='bg-primary color-white radius-no'>
+      保存
+    </button>
+  </bottom>
+</view>

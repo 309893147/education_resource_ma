@@ -1,0 +1,35 @@
+
+
+<view class='center-text' style='padding: 4rem 0;'>
+  <image src='/r/logo.png' class='icon' style='height:5rem;width:4.2rem'></image>
+</view>
+<!-- 
+<view class='center-text'>
+<view class='inline-block'>
+<view class='flex-row'>
+  <view class='tab-item {{mode=="password"?"selected":""}}' bindtap='switchTab' data-tab="password">密码登录</view>
+  <view class='tab-item {{mode=="code"?"selected":""}}' bindtap='switchTab' data-tab="code">验证码登录</view>
+</view>
+</view>
+</view> -->
+
+<view class='s-padding'>
+  <view class='flex-row align-center'>
+    <image class='icon' src='/r/login-phone.png' style='height:1rem;width:1rem;'></image>
+    <input placeholder='手机号码' bindinput="onPhone" class='flex-one'></input>
+  </view>
+  
+    <view class='line'></view>
+  
+  <view class='flex-row align-center v-padding vertical-space'>
+    <image class='icon ' src='/r/verify.png' style='height:1rem;width:1rem;'></image>
+    <input placeholder='验证码' class='flex-one' bindinput='onCode'></input>
+    <view>
+     <text bindtap='getPhoneCode' wx:if="{{timeout <=0}}"> 获取验证码</text>
+     <text wx:else>{{timeout}}</text>
+    </view>
+  </view>
+
+  <button  open-type='getUserInfo' bindgetuserinfo="onUserInfo" class='white-text bg-primary' hover-class='bg-primary-sub'>登录</button>
+</view>
+

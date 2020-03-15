@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "bottom": "/v/bottom-bar/index"
+  }
+}

@@ -1,0 +1,103 @@
+
+<view>
+  <view class='s-padding relative'>
+    <swiper bindchange='onSwiperChange'>
+      <block>
+        <swiper-item style="height:9.375rem;" class="round" wx:for="{{banner}}" wx:for-item="item" wx:for-index="idx" wx:key="this" bindtap="openBanner" data-id="{{item.id}}" data-content="{{item.content}}">     
+              <image style='width:100%;height:100%;' src='{{item.headImg}}'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class='flex-row posi-bottom flex-center'>
+      <label class='swiper-label {{index === currentBanner?"swiper-label-active":""}}' wx:for="{{banner}}"></label>
+      <!-- <label class='swiper-label swiper-label-active'></label>
+      <label class='swiper-label'></label>
+      <label class='swiper-label'></label> -->
+    </view>
+  </view>
+
+</view>
+
+<view class='s-padding flex-row align-center'>
+  <view bindtap='checkBind' class='flex-one center-text'>
+    <img src="/r/home_bill.png" clazz="icon home-icon"></img>
+    <view>常用资源</view>
+  </view>
+  <view bindtap='goHelp' class='flex-one center-text'>
+    <img src="/r/home_aid.png" clazz="icon home-icon"></img>
+    <view>资源求助</view>
+  </view>
+  <view bindtap='goUpdate'  class='flex-one center-text'>
+    <img src="/r/home_book.png" clazz="icon home-icon"></img>
+    <view>资源上传</view>
+  </view>
+  <navigator url='' hover-class='none' class='flex-one center-text' catchtap='openVisitorInvite'>
+    <img src="/r/home_visit.png" clazz="icon home-icon"></img>
+    <view>资源榜单</view>
+  </navigator>
+  <view>
+    <view></view>
+  </view>
+</view>
+
+<view class='flex-row s-padding align-bl' bindtap='goNotice'>
+  <view class='section-title'>通知公告</view>
+  <view class='flex-one h-padding hint-text' >
+    <view class='fadeInTop' wx:if="{{currentMessage}}">{{currentMessage}}</view>
+  </view>
+  <navigator  style='width:1rem;height:.5rem;' class='flex-row align-self-center'>
+    <image src="/r/home_more.png" style="width:1rem;height:.2rem;" class="icon"></image>
+  </navigator>
+</view>
+
+
+  <block wx:for="{{resourceType}}" wx:for-item="item" wx:for-index="idx" wx:key="this">
+
+<view class='flex-row s-padding'>
+  <view class='flex-one indexImg'>
+    <navigator hover-class='none' data-id="{{item.id}}" catchtap='goResource'>
+      <img  src="{{item.headImg}}" clazz="round" mode="widthFix"></img>
+    </navigator>
+  </view>
+  <view style='width:.6rem'></view>
+  <view class='flex-one'>
+    <navigator hover-class='none' catchtap='goToService'>
+      <img src="{{item.headImg}}" clazz="round" mode="widthFix"></img>
+    </navigator>
+  </view>
+</view>
+
+  </block>
+
+
+<!-- <view class='flex-row s-padding' wx:for="{{resourceType}}" wx:for-item="item" wx:for-index="idx" wx:key="this" bindtap="openBanner" data-id="{{item.id}}" data-content="{{item.content}}">
+  <view class='flex-one'>
+    <navigator hover-class='none' catchtap='goSearch'>
+      <img src="{{item.headImg}}" clazz="round" mode="widthFix"></img>
+    </navigator>
+  </view>
+  <view style='width:.6rem'></view>
+  <view class='flex-one'>
+    <navigator hover-class='none' catchtap='goToService'>
+      <img src="/r/sx.png" clazz="round" mode="widthFix"></img>
+    </navigator>
+  </view>
+</view>
+
+<view class='flex-row s-padding'>
+  <view class='flex-one'>
+    <navigator hover-class='none' catchtap='goSearch'>
+      <img src="/r/yy.png" clazz="round" mode="widthFix"></img>
+    </navigator>
+  </view>
+  <view style='width:.6rem'></view>
+  <view class='flex-one'>
+    <navigator hover-class='none' catchtap='goToService'>
+      <img src="/r/zh.png" clazz="round" mode="widthFix"></img>
+    </navigator>
+  </view>
+</view> -->
+
+<view class='s-padding'></view>
+
+<bind showbind="{{showBind}}"></bind>

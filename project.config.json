@@ -1,0 +1,332 @@
+{
+	"description": "Project configuration file",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"nodeModules": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.8.3",
+	"appid": "wxc49e51168e1768aa",
+	"projectname": "ma",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 38,
+			"list": [
+				{
+					"id": -1,
+					"name": "省心服务",
+					"pathName": "pages/index/services/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "便民服务",
+					"pathName": "pages/index/near-search/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "便民服务详情",
+					"pathName": "pages/index/near-search/detail/index",
+					"query": "id=1fc68649257f1703afee7a03",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/mine/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "关于我们",
+					"pathName": "pages/mine/about/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "常见问题",
+					"pathName": "pages/mine/qa/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人资料",
+					"pathName": "pages/mine/information/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的房屋",
+					"pathName": "pages/mine/house/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "login",
+					"pathName": "pages/login/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "add help",
+					"pathName": "pages/index/help/add/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我要买房",
+					"pathName": "pages/index/house-buy/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的服务",
+					"pathName": "pages/index/appointment/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "房屋人员",
+					"pathName": "pages/mine/house/people/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我要吐槽",
+					"pathName": "pages/mine/complaints/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "添加吐槽",
+					"pathName": "pages/mine/complaints/add/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "消息中心",
+					"pathName": "pages/mine/message/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "选择地址",
+					"pathName": "pages/register/area/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 17,
+					"name": "注册",
+					"pathName": "pages/register/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "缴费选择",
+					"pathName": "pages/payment/select/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "物业缴费",
+					"pathName": "pages/payment/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 20,
+					"name": "物业缴费状态",
+					"pathName": "pages/payment/status/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "物业缴费--缴费单位",
+					"pathName": "pages/payment/type/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "物业缴费--选择物业公司",
+					"pathName": "pages/payment/commodity/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "预约服务",
+					"pathName": "pages/index/appointment/add/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "添加房屋",
+					"pathName": "pages/mine/house/add/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 25,
+					"name": "物业账单",
+					"pathName": "pages/payment/bill/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "物业账单详情",
+					"pathName": "pages/payment/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "入驻指南",
+					"pathName": "pages/guide/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的求助",
+					"pathName": "pages/mine/help/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 29,
+					"name": "当前房屋情况",
+					"pathName": "pages/mine/house/people/index",
+					"query": "id=2179",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的吐槽",
+					"pathName": "pages/mine/compliant/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "吐槽评价",
+					"pathName": "pages/mine/compliant/review/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的帮助",
+					"pathName": "pages/mine/help/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "租售详情",
+					"pathName": "pages/index/house/detail/index",
+					"query": "id=98f61c0a-0434-49a8-bb1e-2238f2f052b6",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "房屋租售",
+					"pathName": "pages/index/house/index",
+					"query": "id=98f61c0a-0434-49a8-bb1e-2238f2f052b6",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "买房",
+					"pathName": "pages/index/house-buy/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "添加求助",
+					"pathName": "pages/index/help/add/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "便民信息查询",
+					"pathName": "pages/index/near-search/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "缴费记录",
+					"pathName": "pages/mine/pay-record/index",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

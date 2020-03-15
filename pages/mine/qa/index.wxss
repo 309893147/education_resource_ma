@@ -1,0 +1,10 @@
+/* pages/mine/qa/index.wxss */
+
+.col-2{
+  width: 50%;
+  box-sizing: border-box;
+  padding: .4rem;
+}
+.item{
+  
+}

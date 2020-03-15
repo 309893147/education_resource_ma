@@ -1,0 +1,431 @@
+/* pages/index/resource/detail/detail.wxss */.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.head-image {
+  height: 460rpx;
+  width: 100%;
+}
+.audio{
+  width: 102rpx;
+  height: 110rpx;
+  position: absolute;
+  left: 50%;
+  margin-left: -51rpx;
+  top: 180rpx;
+  opacity: 0.6;
+}
+
+.author-date {
+  flex-direction: row;
+  margin-left: 30rpx;
+  margin-top: 20rpx;
+}
+
+.avatar {
+  height: 64rpx;
+  width: 64rpx;
+  vertical-align: middle;
+}
+
+.author {
+  font-size: 30rpx;
+  font-weight: 300;
+  margin-left: 20rpx;
+  vertical-align: middle;
+  color: #666;
+}
+
+.const-text {
+  font-size: 24rpx;
+  color: #999;
+  margin-left: 20rpx;
+}
+
+.date {
+  font-size: 24rpx;
+  margin-left: 30rpx;
+  vertical-align: middle;
+  color: #999;
+}
+
+.title {
+  margin-left: 40rpx;
+  font-size: 36rpx;
+  margin-top: 30rpx;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #4b556c;
+}
+
+.tool {
+  margin-top: 20rpx;
+}
+
+
+
+.circle-img {
+  float: right;
+  margin-right: 40rpx;
+  vertical-align: middle;
+}
+.circle-img Image {
+  width: 90rpx;
+  height: 90rpx;
+}
+
+.share-img {
+  margin-left: 30rpx;
+}
+
+.horizon {
+  width: 660rpx;
+  height: 1px;
+  background-color: #e5e5e5;
+  vertical-align: middle;
+  position: relative;
+  top: 46rpx;
+  margin: 0 auto;
+  z-index: -99;
+}
+
+.detail {
+  color: #666;
+  margin-left: 30rpx;
+  margin-top: 20rpx;
+  line-height: 44rpx;
+  letter-spacing: 2px;
+}
+
+
+.next{
+  float: right;
+margin-top: 40rpx;
+margin-bottom: 40rpx;
+ margin-right: 30rpx;
+}
+button{
+
+display:block;
+
+padding-left:0px;
+
+padding-right:0px;
+
+line-height:10px;
+
+background-color: rgba(255,255,255,0);
+
+}
+
+button::after {
+
+width:0;
+
+height:0;
+
+top:0;
+
+left:0
+
+}
+
+
+.comments {
+  width: 100%;
+  height: auto;
+  padding-left: 30rpx;
+  /* background: #fff; */
+  margin: 20rpx 0;
+    padding-bottom: 160rpx;
+}
+
+.comments .h {
+  /* position: fixed; */
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  display: flex;
+  /* background: #fff; */
+  height: 84rpx;
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.15); */
+}
+
+.comments .h .item {
+  display: inline-block;
+  height: 82rpx;
+  width: 50%;
+  padding: 0 15rpx;
+  text-align: center;
+}
+
+.comments .h .item .txt {
+  display: inline-block;
+  height: 82rpx;
+  padding: 0 20rpx;
+  line-height: 82rpx;
+  color: #333;
+  font-size: 30rpx;
+  width: 170rpx;
+}
+
+.comments .h .item.active .txt {
+  color: #ab2b2b;
+  /* border-bottom: 4rpx solid #ab2b2b; */
+}
+
+.comments .b {
+  margin-top: 85rpx;
+  padding-bottom: 20rpx;
+  height: auto;
+  width: 720rpx;
+}
+
+.comments .b.no-h {
+  margin-top: 0;
+}
+
+.comments .item {
+  height: auto;
+  width: 720rpx;
+  overflow: hidden;
+  /* border-bottom: 1px solid #d9d9d9; */
+  padding-bottom: 25rpx;
+}
+
+.comments .info {
+  height: 127rpx;
+  width: 100%;
+  padding: 33rpx 0 27rpx 0;
+}
+
+.comments .user {
+  float: left;
+  width: auto;
+  height: 67rpx;
+  line-height: 67rpx;
+  font-size: 0;
+
+}
+
+.comments .user image {
+  float: left;
+  width: 67rpx;
+  height: 67rpx;
+  margin-right: 17rpx;
+  border-radius: 50%;
+}
+
+.comments .user text {
+  display: inline-block;
+  width: auto;
+  height: 66rpx;
+  overflow: hidden;
+  font-size: 29rpx;
+  line-height: 66rpx;
+}
+
+.comments .time {
+  display: block;
+  float: right;
+  width: auto;
+  height: 67rpx;
+  line-height: 67rpx;
+  color: #7f7f7f;
+  font-size: 25rpx;
+  margin-right: 30rpx;
+}
+
+.comments .comment {
+  width: 720rpx;
+  padding-left: 67rpx;
+  line-height: 45.8rpx;
+  font-size: 29rpx;
+  margin-bottom: 16rpx;
+   
+}
+
+.comments .imgs {
+  width: 720rpx;
+  height: 150rpx;
+  margin-bottom: 45rpx;
+}
+
+.comments .imgs .img {
+  height: 150rpx;
+  width: 150rpx;
+  margin-right: 28rpx;
+}
+
+.comments .spec {
+  width: 720rpx;
+  height: 25rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.comments .spec .item {
+  color: #7f7f7f;
+  font-size: 25rpx;
+}
+
+.comments .customer-service {
+  width: 690rpx;
+  height: auto;
+  overflow: hidden;
+  margin-top: 23rpx;
+  /* background: rgba(0, 0, 0, 0.03); */
+  padding: 21rpx;
+}
+
+.comments .customer-service .u {
+  font-size: 24rpx;
+  color: #333;
+  line-height: 37.5rpx;
+}
+
+.comments .customer-service .c {
+  font-size: 24rpx;
+  color: #999;
+  line-height: 37.5rpx;
+}
+
+
+
+
+
+
+.pocket_input {
+
+position: fixed;
+
+bottom: 0;
+
+width: 100%;
+
+background-color: white;
+
+overflow: hidden;
+/* z-index: -10; */
+
+}
+
+.input_style{
+
+margin: 12rpx 23rpx;
+
+background-color: #F4F5F6;
+
+font-size: 30rpx;
+
+border-radius: 20rpx;
+
+padding-left: 15rpx;
+
+}
+.input-placeholder{
+
+margin-left: 25rpx;
+
+}
+/* .sub{
+  position: fixed;
+right: 0;
+
+width: 100%;
+
+background-color: white;
+
+overflow: hidden;
+z-index: -100;
+} */
+
+
+.names {
+  display: flex;
+  font-size: 30rpx;
+  line-height: 40rpx;
+}
+ 
+.input_null {
+  color: #c9c9c9;
+}
+ 
+.replyAll {
+  position:absolute;
+}
+ 
+.release {
+  align-items: flex-end; /*底部对齐*/
+  box-sizing: border-box;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 18rpx 0 18rpx 30rpx;
+  background-color: #f7f8f7;
+  font-size: 28rpx;
+  z-index: 999;
+  margin-top: 150px;
+ 
+}
+ 
+.replyinfo1{ 
+  display: flex;
+  justify-content: space-between; /*两端对齐*/
+  font-size: 35rpx;
+}
+.replyinfo2{ 
+  display: flex;
+  justify-content: space-between; /*两端对齐*/
+}
+ 
+.release textarea {
+  width: 550rpx;
+  min-height: 34rpx;
+  max-height: 102rpx; /*最多显示三行*/
+  border-width: 15rpx 20rpx; /*使用padding与预期留白不一致，故使用border*/
+  border-style: solid;
+  border-color: #fff;
+  line-height: 34rpx;
+  font-size: 28rpx;
+  background-color: #fff;
+  border-radius: 4rpx;
+}
+ 
+.release .text {
+  font-size: 40rpx;
+  color: #c9c9c9;
+}
+ 
+.cancel {
+  width: 240rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  text-align: center;
+  color: #6c0;
+  margin: 0 3px;
+  padding: 0;
+}
+ 
+.release .submit {
+  width: 120rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  text-align: center;
+  color: #6c0;
+  margin: 0 3px;
+  padding: 0;
+}
+ 
+.pro-box .info .text .delete {
+  color: #f68135;
+  border-radius: 50rpx;
+  border: 1px solid #f68135;
+  font-size: 28 rpx;
+  width: 150rpx;
+  height: 48rpx;
+  text-align: center;
+}

@@ -1,0 +1,21 @@
+<import src="../../../../wxParse/wxParse.wxml" />
+
+<view class="s-padding">
+
+ <view class='s-size'>{{detail.title}}</view>
+
+ <view class='flex-row space-between hint-text'>
+   <view>{{detail.time}}</view>
+   <view>阅读量:{{detail.readNum}}</view>
+ </view>
+
+<view class='s-padding'></view>
+ <!-- <image src='{{detail.image}}' style='width:100%' mode='widthFix' class='vertical-space'></image> -->
+ <view class='wrap'>
+ 
+ <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+ </view>
+</view>
+<bottom>
+  <view class='bg-primary text-white center-text  s-size action-bar' bindtap='goBack'>查看其他公告</view>
+</bottom>

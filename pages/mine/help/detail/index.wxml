@@ -1,0 +1,33 @@
+<!--pages/mine/help/detail/index.wxml-->
+<view class='bg-white s-padding font-size-three'>
+  <view class='vertical-space font-size-four'>租房</view>
+  <view class='flex-row vertical-space'>
+    <view>姓名</view>
+    <view class='h-padding'>王先生</view>
+  </view>
+  <view class='flex-row vertical-space'>
+    <view>地址</view>
+    <view class='h-padding'>王先生</view>
+  </view>
+  <view class='flex-row vertical-space'>
+    <view>电话</view>
+    <view class='h-padding'>王先生</view>
+  </view>
+  <view class='flex-row vertical-space'>
+    <view>面积</view>
+    <view class='h-padding'>王先生</view>
+  </view>
+</view>
+<view class='v-padding'></view>
+
+
+<view class='bg-white s-padding s-size'>
+  <view class='vertical-space font-size-four' >处理结果</view>
+  <view class='flex-row vertical-space'>
+    <view class='font-size-four'>待处理</view>
+  </view>
+</view>
+
+<bottom>
+  <view class='bg-primary text-white center-text  s-size action-bar' bindtap='cancel'>取消求助</view>
+</bottom>

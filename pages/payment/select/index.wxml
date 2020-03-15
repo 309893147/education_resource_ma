@@ -1,0 +1,31 @@
+<!--pages/payment/select/index.wxml-->
+<view class='payment'>
+  <view class='search'>
+    <view class='v-padding-two flex-row align-center'>
+      <view class='flex-row bg-input round align-center h-padding-small v-padding flex-one box-s icon-right'>
+        <image class='icon arrow icon-right' src='/r/search.png'></image>
+        <input placeholder='请输入搜索内容' placeholder-class='place' value='{{searchValue}}' bindinput='getSearchValue' class='flex-one'></input>
+      </view>
+      <view class='color-primary' bindtap='clearSearchValue'>取消</view>
+    </view>
+  </view>
+  <scroll-view class='scroll' scroll-y scroll-into-view="{{select}}" scroll-with-animation="true">
+    <view wx:for="{{menu}}" id="{{item.name}}">
+      <view class='bg-gray color-one h-padding-small v-padding-two'>{{item.name}}</view>
+
+      <view class='v-padding-two'>
+        <view wx:for="{{item.items}}" class='mt-top-three scroll-item' wx:for-item="it" wx:for-index="ix">
+          <view class='color-title scroll-item-text'>{{it.name}}</view>
+          <view class='color-two vertical-space scroll-item-text'>{{it.address}}</view>
+          <view class='border-bottom ' wx:if="{{ix!=(item.items.length-1)}}"></view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class='menuSelect color-primary font-size-two'>
+    <view class='item'>全部</view>
+    <view wx:for="{{selectMenu}}" bindtap='goScroll' data-key="{{item}}" class='item'>
+      {{item}}
+    </view>
+  </view>
+</view>

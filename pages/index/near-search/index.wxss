@@ -1,0 +1,33 @@
+/* pages/index/near-search/index.wxss */
+
+page {
+  background: #f4f4f4;
+}
+
+.search-wrapper {
+  background: #f8f8f8;
+}
+
+.search-wrapper image {
+  width: 0.812rem;
+  height: 0.875rem;
+}
+
+.action {
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-right: .4rem;
+}
+.right-bottom{
+  position: absolute;
+  right: 0rem;
+  bottom: 0rem;
+}
+.caption{
+  color: gray;
+  padding: 1rem;
+  box-sizing: border-box;
+  white-space: pre-wrap;
+  text-align: left;
+  margin-top: 2rem;
+}

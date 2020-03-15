@@ -1,0 +1,307 @@
+/* pages/index/resource/index.wxss */
+page {
+    background-color: whitesmoke;
+}
+.post-container{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20rpx;
+
+  border-bottom: 1px solid #ededed;
+  border-top: 1px solid #ededed;
+  padding-bottom: 5px;
+}
+.post-author-date{
+  margin: 10rpx 20rpx 10rpx;
+}
+.post-author{
+  width: 60rpx;
+  height: 60rpx;
+  vertical-align: middle;
+
+}
+.post-date{
+  margin-left: 20rpx;
+  vertical-align: middle;
+  margin-bottom: 5px;
+  font-size: 26rpx;
+}
+
+.post-title{
+  font-size: 34rpx;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.post-image{
+  margin-left: 16px;
+  width: 100%;
+  height: 340rpx;
+  margin: auto 0;
+  margin-bottom: 15px;
+}
+
+.post-content{
+  color: #666;
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+  margin-left: 20rpx;
+  letter-spacing:2rpx ;
+  line-height: 40rpx;
+
+}
+.post-views{
+  font-size:11px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #666;
+  padding-left: 10px;
+
+}
+.post-like{
+  font-size: 13px;
+   display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  line-height: 16px;
+  margin-left: 10px;
+
+}
+.post-like-image{
+  height: 16px;
+  width: 16px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+.post-like-font{
+  vertical-align: middle;
+  margin-right: 20px;
+}
+
+
+.tool {
+  margin-top: 20rpx;
+}
+
+
+
+.circle-img {
+  float: right;
+  margin-right: 40rpx;
+  vertical-align: middle;
+}
+.circle-img Image {
+  width: 90rpx;
+  height: 90rpx;
+}
+
+.horizon {
+  width: 660rpx;
+  height: 1px;
+  background-color: #e5e5e5;
+  vertical-align: middle;
+  position: relative;
+  top: 46rpx;
+  margin: 0 auto;
+  z-index: -99;
+}
+
+
+
+
+
+
+
+
+
+
+page {
+  background-color: whitesmoke;
+}
+
+swiper {
+  width: 100%;
+  height: 340rpx;
+}
+
+swiper image {
+  width: 100%;
+  height: 480rpx;
+}
+
+.nav_top {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 20rpx 10rpx;
+  box-sizing: border-box;
+  justify-content: space-around;
+}
+
+.nav_top_item {
+  font-size: 20rpx;
+  text-align: center;
+  border-radius: 0rpx;
+  box-sizing: border-box;
+   padding-top: 10rpx;
+}
+ .more {
+  line-height:122px;
+  width: 50rpx;
+  height: 100rpx;
+}
+
+.nav_top_item .more {
+  width: 50rpx;
+  height: 50rpx;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+
+.nav_top_item image {
+  width: 140rpx;
+  height: 140rpx;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.nav_text {
+  padding-top: 10rpx;
+   padding-bottom: 10rpx;
+  width: 140rpx;
+  font-size: 11px;
+  display: inline-block;
+}
+
+.active_r {
+  color: #e5004f;
+}
+
+.active_o {
+  color: #eb6100;
+}
+
+.active_y {
+  color: #add8e6;
+}
+
+.active_p {
+  color: #aa2adf;
+}
+
+.active_g {
+  color: #8fc31f;
+}
+
+.background_music {
+  position: fixed;
+  top: 20rpx;
+  right: 10rpx;
+  z-index: 10001;
+  width: 100rpx;
+}
+
+.musicImg {
+  width: 75rpx;
+  height: 75rpx;
+}
+
+.music_icon {
+  animation: musicRotate 3s linear infinite;
+}
+
+.music_play {
+  width: 28rpx;
+  height: 75rpx;
+  margin-left: -5px;
+  transform-origin: top;
+  -webkit-transform: rotate(20deg);
+}
+
+.playImg {
+  animation: musicStop 1s linear forwards;
+}
+
+.pauseImg {
+  animation: musicStart 1s linear forwards;
+}
+
+@-webkit-keyframes musicRotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes musicStop {
+  from {
+    -webkit-transform: rotate(20deg);
+  }
+
+  to {
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes musicStart {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(20deg);
+  }
+}
+
+.music_stop {
+  width: 4em;
+  display: none;
+}
+
+/* 搜索 */
+ .search{  
+      width: 80%;  
+    }  
+    .search_arr {  
+      border: 1px solid #d0d0d0;  
+      border-radius: 10rpx;  
+      margin-left: 20rpx;  
+    }  
+    .search_arr input{  
+      margin-left: 60rpx;  
+      height: 60rpx;  
+      border-radius: 5px;  
+    }  
+    .bc_text {  
+      line-height: 68rpx;  
+      height: 68rpx;  
+      margin-top: 34rpx;  
+    }  
+      
+    .sousuo {  
+      margin-left: 15rpx;  
+      width: 15%;  
+      line-height: 150%;  
+      text-align: center;  
+      border: 1px solid #d0d0d0;  
+      border-radius: 10rpx;  
+    }  
+    .page_row{  
+      display: flex;  
+      flex-direction: row  
+    }  
+    .searchcion {  
+      margin: 10rpx 10rpx 10rpx 10rpx;  
+      position: absolute;  
+      left:25rpx;  
+      z-index: 2;  
+      width: 20px;  
+      height: 20px;  
+      text-align: center;  
+    }  
