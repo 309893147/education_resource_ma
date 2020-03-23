@@ -1,8 +1,0 @@
-{
-  "usingComponents": {
-    "bottom":"/v/bottom-bar/index",
-    "add":"/v/add-button/index"
-  },
-  "navigationBarTitleText":"我要买房",
-  "enablePullDownRefresh": true
-}

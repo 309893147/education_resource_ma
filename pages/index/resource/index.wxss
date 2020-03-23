@@ -51,6 +51,12 @@ page {
   letter-spacing:2rpx ;
   line-height: 40rpx;
 
+  margin-top: 20rpx;
+ white-space: pre-wrap;
+ 
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+
 }
 .post-views{
   font-size:11px;

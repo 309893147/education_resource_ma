@@ -1,54 +1,44 @@
-<import src="../_partials/topTip.wxml" />
-
-<view class="page">
-    <template is="topTip" data="{{showMsg: showTopTips, msg: topTipMsg}}" />
-    
-    <view class="page__bd sbox">
-        <form bindsubmit="formSubmit">
-        <!-- diy 模块 -->
-        <view class="block">
-            <block wx:for="{{blocks}}" wx:key="{{o}}">
-            <view class="weui-cells weui-cells_form block__item">
-                <view class="weui-cell">
-                    <view class="weui-cell__bd">
-                        <block wx:if="{{ item.type }}">
-                            <view class="block__toolbox">
-                                <view bindtap="handBlockUp" data-index="{{index}}" class="icon icon-up"></view>
-                                <view bindtap="handBlockDown" data-index="{{index}}" class="icon icon-down"></view>
-                                <view bindtap="handBlockClose" data-index="{{index}}" class="icon icon-close"></view>
-                            </view>
-                            <block wx:if="{{ item.type=='text' }}">
-                                <textarea class="u-textarea" name="field[{{item.index}}]" bindinput="bingContentInput" data-index="{{index}}" value="{{ item.value }}" placeholder="请输入..."></textarea>
-                            </block>
-                            <block wx:if="{{ item.type=='image' }}">
-                                <input type="text" name="field[{{item.index}}]" value="{{item.value}}" style="display: none;" readonly="readonly"/>
-                                <image src="{{item.value}}" class="u-image"></image>
-                            </block>
-                        </block>
-                        <block wx:else>
-                            <view class="flex padding">
-                                <view class="flex__item block__item-type" animation="{{item.fadeOutLeft}}">
-                                    <view class="block__item-type-text" bindtap="bingTypeSelect" data-type='text' data-index="{{index}}"></view>
-                                </view>
-                                <view class="flex__item" animation="{{item.fadeOutRight}}">
-                                    <view class="block__item-type-image" bindtap="bingTypeSelect" data-type='image' data-index="{{index}}"></view>
-                                </view>
-                            </view>
-                        </block>
-                    </view>
-                </view>
-                <view class="weui-cell block__sidebar padding"  bindtap="handPlus" >
-                    <view class="weui-cell__bd">
-                        <view class="icon icon-plus"data-order="{{index+1}}"></view>
-                    </view>
-                </view>
-            </view>
-            </block>
-        </view>
-
-        <view class="block__btns">
-            <button formType="submit" class="btn btn-primary btn-blank" disabled="{{submitDisabled}}">提交</button>
-        </view>
-        </form>
-    </view>
+<view class="s-padding s-size">求助内容</view>
+<view class='s-padding'>
+  <textarea class='font-size-four' style='height:6rem;width:100%;' placeholder='请输入...' placeholder-class='place' bindinput='onContent' maxlength="{{max}}"></textarea>
 </view>
+<view class='s-padding'>
+  <view class='flex-row space-between'>
+    <view></view>
+    <view class='sub-text'>{{content.length}}/{{max}}</view>
+  </view>
+  <view class='line'></view>
+</view>
+
+<view class='s-padding flex-row space-between'>
+  <view class='section-title'>
+    图片补充
+  </view>
+  <view>{{images.length}}/3</view>
+</view>
+<view class='s-padding wrap'>
+  <view class='relative inline-block' style='height:3.75rem;width:3.75rem;margin-right:.6rem;margin-bottom:.6rem' wx:for="{{images}}">
+    <img sty="height:3.75rem;width:3.75rem;" src="{{item}}" mode="aspectFill"></img>
+    <image src='/r/circle_delete.png' class="icon arrow" style="position:absolute;right:-0.3rem;top:-0.3rem" bindtap='deleteImage' data-index="{{index}}"></image>
+  </view>
+  <view class='relative inline-block' style='height:3.75rem;width:3.75rem;margin-right:.6rem;margin-bottom:.6rem' wx:if="{{images.length < 3}}">
+    <image src='/r/add_image.png' class='icon' style='height:3.75rem;width:3.75rem;' bindtap='addImage'></image>
+  </view>
+</view>
+
+
+
+<!--订阅消息-->
+<view class="s-padding">
+  <view class="flex-row align-center">
+    <!-- <button class="messageBtn" bindtap="appliaction">订阅消息</button> -->
+    <checkbox checked="{{messageStatus}}" bindtap="changeMessage"></checkbox>
+    <text class="s-padding  hint-text wrap">
+    勾选订阅消息，并允许使用。才可接收到服务通知。如需保持允许状态，请选择弹窗底部“总是保持以上选择，不再询问”
+    </text>
+  </view>
+</view>
+<view style="height:150rpx;"></view>
+<bottom>
+  <view class='bg-primary text-white center-text  s-size action-bar' bindtap='appliaction'>提交</view>
+</bottom>

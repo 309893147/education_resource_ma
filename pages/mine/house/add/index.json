@@ -1,7 +1,0 @@
-{
-  "usingComponents": {
-    "bottom": "/v/bottom-bar/index",
-    "img":"/v/img/index"
-  },
- "navigationBarTitleText":"添加房屋"
-}

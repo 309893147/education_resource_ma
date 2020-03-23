@@ -1,6 +1,4 @@
-// pages/index/notice/detail/index.js
-let WxParse = require('../../../../wxParse/wxParse.js');
-require("../../../../wxParse/wxParse.js")
+
 Page({
 
   /**
@@ -40,15 +38,7 @@ Page({
   markRead(){
     getApp().api.get("NoticeRead",{id:this.data.id},true).then(it=>{})
   },
-  getDetail(){
-    let vm = this
-    getApp().api.get("SearchListOwnerLine", { id: this.data.id, tname:"tz"}).then(it =>{
-      it.time = this.data.time
-      this.setData({detail:it})
-      let content = "<div>"+it.Remark+"</div>"
-      WxParse.wxParse('article', 'html', content.replace(/=\"\"/g, '').replace(/, \"/g, ''), vm, 0);
-    })
-  },
+  
   /**
    * Lifecycle function--Called when page show
    */

@@ -12,7 +12,7 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     showBind: false,
     banner: ["/r/barner_three.jpg"],
-    currentMessage:"物业已开通业务，欢迎大家使用",
+    currentMessage:"优资源已开通业务，欢迎大家使用",
     setMess:"",
     resourceType:""
   },
@@ -24,7 +24,7 @@ Page({
   },
   onLoad: function() {
     var me = this;
-    // me.getBanner()
+     me.getBanner()
     me.getResourceType()
   },
   goSelectHouse() {
@@ -82,7 +82,7 @@ Page({
   },
   getBanner() {
     getApp().api.get("/banner", true, true).then(it => {
-      console.log(it)
+      console.log("BAN "+it)
       this.setData({
         banner: it
       })
@@ -98,15 +98,20 @@ Page({
     })
   },
   openBanner(e) {
-    console.log(e)
-    let id =e.currentTarget.dataset.id;
-    let content = e.currentTarget.dataset.content;
-    console.log(id)
-    let banner = this.data.banner[getApp().ed(e, "id")]
-    getApp().getUtil("store").put("banner", content)
-      wx.navigateTo({
-        url: 'banner/index?id=' + id,
-      })
+    console.log("2"+e)
+
+    let index = getApp().ed(e, "index");
+    let item = this.data.list[index];
+    wx.setStorageSync("message-detail-url", getApp().api.getHttpUrl() + item.url)
+    wx.navigateTo({
+      url: '/pages/index/notice/detail/index',
+    })
+
+    // let banner = this.data.banner[getApp().ed(e, "index")]
+    // getApp().getUtil("store").put("banner", banner)
+    //   wx.navigateTo({
+    //     url: 'banner/index?title=' + banner.title,
+    //   })
 
   },
   onHide(){
@@ -178,8 +183,8 @@ Page({
   },
   goHelp() {
     getApp().getUserInfo((data) => {
-      wx.navigateTo({
-        url: '/pages/mine/help/index',
+      wx.reLaunch({
+        url: '/pages/index/help/index',
       })
     }, () => {
       this.showBind()
@@ -190,25 +195,6 @@ Page({
       wx.navigateTo({
         url: '/pages/index/appointment/index',
       })
-    }, () => {
-      this.showBind()
-    })
-  },
-  checkBind() {
-    getApp().getUserInfo((data) => {
-      getApp().getCommunityInfo((it) => {
-        if(it.PayChoice == 0){
-          wx.navigateTo({
-            url: '/pages/payment/bill/index',
-          })
-        } else{
-          wx.showModal({
-            showCancel:false,
-            title: '您所在小区暂未开通物业缴费功能，敬请期待！',
-          })
-        }
-      })
-
     }, () => {
       this.showBind()
     })

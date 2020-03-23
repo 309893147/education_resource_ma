@@ -1,26 +1,29 @@
-<!--pages/goods/goods.wxml-->
+<!--pages/mine/information/index.wxml-->
 
-<form bindsubmit="formSubmit">
-  <view class="classname">
-
-    <view class="myview">
-      <view class="left1">用户名 :</view>
-      <view class="right1">
-        <input value="" name="mobile" placeholder="建议输入手机号码" />
-      </view>
-    </view>
-    <view class="myview">
-      <view class="left1">密码 :</view>
-      <view class="right1">
-        <input value="" name="password" placeholder="建议输入6位以上密码" />
-      </view>
-    </view>
-
-   
-  </view>
+<view class="flex-row space-between align-center v-padding h-margin border-bottom">
+  <view>用户名</view>
+  <input placeholder='请输入用户名(建议输入手机号)' placeholder-class='place-color'  value="{{manager.mobile}}" bindinput='getValue' data-name="mobile"></input>
+</view>
 
 
-  <!-- 插入用户id -->
-  <!-- <input name="userId" hidden='{{true}}' value="{{userId}}" /> -->
-  <button class='addBtn' form-type="submit" >提交申请</button>
-</form>
+<view class="flex-row space-between align-center v-padding h-margin">
+  <view>密码</view>
+  <!-- <view>{{information.contact}}</view> -->
+   <input placeholder='请输入密码'  placeholder-class='place-color'  value="{{manager.password}}" bindinput='getValue' data-name="password" type='number'></input>
+</view>
+
+<view class="flex-row space-between align-center v-padding h-margin">
+  <view>申请理由</view>
+  <!-- <view>{{information.contact}}</view> -->
+   <input placeholder='请输入申请理由'  placeholder-class='place-color'  value="{{manager.reason}}" bindinput='getValue' data-name="reason" type='number'></input>
+</view>
+
+<view class='line-two'></view>
+
+<view class='fix-bottom'>
+  <bottom>
+    <button bindtap='submit' class='bg-primary color-white radius-no'>
+      保存
+    </button>
+  </bottom>
+</view>

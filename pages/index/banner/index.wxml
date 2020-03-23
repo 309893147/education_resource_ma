@@ -1,5 +1,2 @@
-<import src="../../../wxParse/wxParse.wxml" />
 
-<view class='wrap s-padding'>
-  <template is="wxParse" data="{{wxParseData:article.nodes}}" />
-</view>
+<web-view src="{{url}}"></web-view>

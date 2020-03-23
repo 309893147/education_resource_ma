@@ -1,0 +1,70 @@
+<!--pages/mine/house/index.wxml-->
+
+<!-- <view class='s-margin' wx:if="{{!selectMode}}">
+  <view class='vertical-space '>当前房屋</view>
+  <view class='flex-row round align-center bg-white space-between s-padding vertical-space' wx:for="{{[currentRoom]}}" bindtap='goThisHouse' data-index="{{index}}" wx:if="{{currentRoom}}">
+    <view class='bg-primary radius-round icon-one tag-space flex-row align-center flex-center  '>
+      <view class='house-text' wx:if="{{item.type === 'OWNER'}}">业主</view>
+      <view class='house-text' wx:if="{{item.type === 'OWNER_FAMILY'}}">家属</view>
+      <view class='house-text' wx:if="{{item.type === 'TENANT'}}">租户</view>
+      <view class='house-text' wx:if="{{item.type === 'BABY_SITTER'}}">保姆</view>
+    </view>
+    <view class='flex-one'>
+      <view class='flex-row align-center'>
+        <label class='house-label border-yellow label-bg-yellow color-yellow ' wx:if="{{item.status == 'REVIEWING'}}">审核中</label>
+        <label class='house-label border-primary label-bg-primary color-primary' wx:if="{{item.status == 'ACTIVE'}}">已验证</label>
+        <label class='house-label border-red label-bg-red color-red' wx:if="{{item.status == 'REJECT'}}">认证失败</label>
+        <label class='house-label border-red label-bg-red color-red' wx:if="{{!item.status}}">未认证</label>
+        <text>{{item.community.name}}</text>
+      </view>
+      <view class="mt-6">
+        {{item.building+'栋-'+item.unit+'单元-'+item.floor+'-'+item.doorNo}}
+      </view>
+      <view class='color-one mt-6'>{{item.mobile}}</view>
+    </view>
+    <image wx:if="{{currentRoom.status==1||currentRoom.status==2}}" class='arrow back-trans' src="/r/arrow_right.png"></image>
+  </view>
+  <view class='round bg-white s-padding' wx:if="{{!currentRoom}}">
+    <view class='s-padding'>暂无当前房屋</view>
+  </view>
+</view> -->
+<view class='s-margin'>
+  <view class='vertical-space ' wx:if="{{!selectMode}}">我的资源</view>
+  <block wx:if="{{allResource.length!=0}}">
+    <view class='flex-row round align-center bg-white space-between s-padding vertical-space' wx:for="{{allResource}}" bindtap='showActions' data-index="{{index}}">
+      <!-- <view class='bg-primary radius-round icon-one tag-space flex-row align-center flex-center  '>
+        <view class='house-text' wx:if="{{item.type === 'OWNER'}}">业主</view>
+        <view class='house-text' wx:if="{{item.type === 'OWNER_FAMILY'}}">家属</view>
+        <view class='house-text' wx:if="{{item.type === 'TENANT'}}">租户</view>
+        <view class='house-text' wx:if="{{item.type === 'BABY_SITTER'}}">保姆</view>
+      </view> -->
+      <view class='flex-one'>
+        <view class='flex-row align-center'>
+          <label class='house-label border-yellow label-bg-yellow color-yellow ' wx:if="{{item.resourceStatus === 'UNPROCESSED'}}">待处理</label>
+          <label class='house-label border-primary label-bg-primary color-primary' wx:if="{{item.resourceStatus === 'PASS'}}">已通过</label>
+          <label class='house-label border-red label-bg-red color-red' wx:if="{{item.resourceStatus === 'NOPASS'}}">未通过</label>
+
+          <text>{{item.title}}</text>
+        </view>
+        <!-- <view class="mt-6">
+          {{item.building+'栋-'+item.unit+'单元-'+item.floor+'-'+item.doorNo}}
+        </view> -->
+        <view class='color-one mt-6'>点赞:{{item.likes}}</view>
+      </view>
+      <!-- <image class='arrow back-trans' src="/r/arrow_right.png"></image> -->
+    </view>
+  </block>
+  <block wx:else>
+    <view class='flex-row round align-center bg-white space-between s-padding vertical-space'>
+      <view class=' radius-round color-one  icon-one tag-space flex-row align-center flex-center  '>
+        暂无上传资源
+      </view>
+    </view>
+  </block>
+</view>
+
+<!-- <navigator url='/pages/register/area/index'> -->
+
+<navigator url='add/index' wx:if="{{!selectMode}}">
+  <add title="添加资源"></add>
+</navigator>

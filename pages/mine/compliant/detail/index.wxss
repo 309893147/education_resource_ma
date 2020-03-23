@@ -1,5 +1,0 @@
-/* pages/index/house/detail/index.wxss */
-/* pages/index/appointment/index.wxss */
-page{
-  background: #f4f4f4;
-}

@@ -1,99 +1,87 @@
-<import src="../../../../wxParse/wxParse.wxml" />
 <view class='container'>
-  <!-- <image class='head-image' src='{{isPlayingMusic?postData.music.coverImg:postData.headImgSrc}}'></image> -->
-  <!-- <image class='head-image' src='{{mpImg}}'></image> -->
-
-  <!-- 
-  <image catchtap='onMusicTap' class='audio' src="{{isPlayingMusic?'/images/music/music-stop.png':'/images/music/music-start.png'}}"></image> -->
-
-    
-
-
   <text class='title'>{{resource.title}}</text>
   <view class='author-date'>
 
-    <text class='author'>{{resource.userId}}</text>
-    <!-- <text class='date'>{{mpDatetime}}</text> -->
-  </view>
+     作者: <text class='author'>{{resource.user.nickName}}</text>
 
+  </view>
+  <view class='author-date'>
+
+
+   发布时间:  <text class='date'>{{resource.createTime}}</text>
+  </view>
   <view class='tool'>
     <view class='circle-img'>
-      <image wx:if="{{collected}}" catchtap='rmCollectionTap' src='/r/collection.png'></image>
-      <image wx:else catchtap='onCollectionTap' data-mpId='{{mpId}}' src='/r/collection-anti.png'></image>
-
-    </view>
-    <view class='circle-img'>
-      <button open-type='share'  data-mpid="{{mpId}}">
-        <image class='share-img' src='/r/share-anti.png'></image>
+      <button catchtap="goDownload" data-link="{{resource.link}}">
+        <image class='share-img' src='/r/download.png'></image>
       </button>
     </view>
     <view class='circle-img'>
-<button  bindtap="goDownload" data-link="{{resource.link}}">
-
- <image class='share-img' src='/r/download.png'></image>
-开始下载</button>
-   </view>
+      <image wx:if="{{collected}}"  catchtap='rmCollectionTap' src='/r/collection.png'></image>
+      <image wx:else catchtap='onCollectionTap'  data-mpId='{{mpId}}' src='/r/collection-anti.png'></image>
+    </view>
+    <view class='circle-img'>
+      <button open-type='share' data-mpid="{{mpId}}">
+        <image class='share-img' src='/r/share-anti.png'></image>
+      </button>
+    </view>
+  
     <view class='horizon'></view>
-
-
-
   </view>
 
-  <view class='wrap s-padding'>
-  <template is="wxParse" data="{{wxParseData:article.nodes}}" />
-</view>
-  <!-- <text class='detail'>{{resource.content}}</text> -->
+
+  <text class='detail' >{{resource.content}}</text>
 
 </view>
 
 <!-- <text class='next' bindtap='onDetailTap' data-id="{{resource.}}">下一篇</text> -->
- <view class="comments">
+<view class="comments">
   <view class="h">
     <view class="item {{ showType == 0 ? 'active' : ''}}" bindtap="switchTab">
       <view class="txt">精彩评论</view>
     </view>
     <view class="item {{ showType == 0 ? '' : 'active'}}" bindtap="callfocus">
-      <view class="txt">写评论   </view>
-     
-    </view>
+      <view class="txt">写评论 </view>
 
-  </view> 
-
- <block wx:for="{{commentList}}" wx:for-item="item" wx:for-index="idx" wx:key="this">
-
-  <view class="b">
-    <view>
-      <view class="info">
-        <view class="user">
-          <image src="{{item.user.avatarUrl}}"></image>
-          <text>{{item.user.nickName}}</text>
-        </view>
-        <view class="time">{{item.createTime}}</view>
-      </view>
-      <view class="comment">{{item.content}}</view>
-      <view class="imgs" wx:if="{{item.picList.length > 0}}">
-        <image class="img" wx:for="{{item.picList}}" wx:key="*this" wx:for-item="pitem" src="{{pitem}}"></image>
-      </view>
-      <view class="customer-service" wx:if="{{item.reply}}">
-        <text class="u">小商场回复：</text>
-        <text class="c">xxx{{item.reply}}</text>
-      </view>
     </view>
 
   </view>
+
+  <block wx:for="{{commentList}}" wx:for-item="item" wx:for-index="idx" wx:key="this">
+
+    <view class="b">
+      <view>
+        <view class="info">
+          <view class="user">
+            <image src="{{item.user.avatarUrl}}"></image>
+            <text>{{item.user.nickName}}</text>
+          </view>
+          <view class="time">{{item.createTime}}</view>
+        </view>
+        <view class="comment">{{item.content}}</view>
+        <view class="imgs" wx:if="{{item.picList.length > 0}}">
+          <image class="img" wx:for="{{item.picList}}" wx:key="*this" wx:for-item="pitem" src="{{pitem}}"></image>
+        </view>
+        <view class="customer-service" wx:if="{{item.reply}}">
+          <text class="u">小商场回复：</text>
+          <text class="c">xxx{{item.reply}}</text>
+        </view>
+      </view>
+
+    </view>
   </block>
 
 </view>
 <form bindsubmit="formSubmit" report-submit="true">
   <view class="release">
-    <view  wx:if="{{reply}}" class="replyinfo1">
-      回复<text class="text">{{replyUserName}}</text>
+    <view wx:if="{{reply}}" class="replyinfo1">
+      回复
+      <text class="text">{{replyUserName}}</text>
       <button class="cancel" bindtap="cancleReply">取消回复</button>
     </view>
     <view class="replyinfo2">
-      <input type='text' hidden="{{whidden}}"  placeholder-class="input_null" fixed="true" maxlength="-1" show-confirm-bar="false" cursor-spacing="15" auto-height="true" placeholder="请输入回复"  focus='{{focus}}'  name="content"></input>
-       <button form-type="submit" class="submit" hidden="{{whidden}}" >发送</button>
+      <input type='text' hidden="{{whidden}}" placeholder-class="input_null" fixed="true" maxlength="-1" show-confirm-bar="false" cursor-spacing="15" auto-height="true" placeholder="请输入评论" focus='{{focus}}' name="content"></input>
+      <button form-type="submit" class="submit" hidden="{{whidden}}">发送</button>
     </view>
   </view>
 </form>
-

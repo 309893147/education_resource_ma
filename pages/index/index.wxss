@@ -1,28 +1,40 @@
 /**index.wxss**/
+
 .userinfo {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.fadeInTop{
-  animation:fadeInTop .5s linear; 
+
+.fadeInTop {
+  animation: fadeInTop 0.5s linear;
 }
 
-.indexImg{
-
-  width: 20px;
+.indexImg {
+  width: 185px;
+  padding-left: 10px;
+  padding-top: 10px;
 }
 
-@keyframes fadeInTop{
- 0%{
-   opacity: 0;
-   transform: translateY(-100%);
- }
- 100%{
-   opacity: 1;
-   transform: translateY(0%);
- }
+.flex-index {
+  
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
 }
+
+@keyframes fadeInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
 .userinfo-avatar {
   width: 128rpx;
   height: 128rpx;
@@ -37,23 +49,23 @@
 .usermotto {
   margin-top: 200px;
 }
-.home-icon{
-  height:2.8125rem;
+
+.home-icon {
+  height: 2.8125rem;
   width: 2.8125rem;
 }
-.swiper-label{
-  width:6px;
-height:6px;
-border-radius: 50%;
-background:rgba(96,96,96,0.38);
-opacity:1;
-margin: 0 .1rem;
-}
-.swiper-label-active{
-    width:18px;
-border-radius: 0.25rem;
-background:rgba(77,171,108,1);
 
+.swiper-label {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(96, 96, 96, 0.38);
+  opacity: 1;
+  margin: 0 0.1rem;
 }
 
-
+.swiper-label-active {
+  width: 18px;
+  border-radius: 0.25rem;
+  background: rgba(77, 171, 108, 1);
+}

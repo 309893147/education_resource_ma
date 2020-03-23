@@ -5,7 +5,7 @@ let events = {}
 
 
 App({
-  serverUrl: "http://localhost:8088",
+  serverUrl: "http://192.168.10.171:8088",
   globalData: {
     userInfo: null,
     openId: null,
@@ -141,15 +141,15 @@ App({
     })
   },
   checkHouse(cb){
-    let house = wx.getStorageSync("currentHouse")
+    let house = wx.getStorageSync("currentUser")
     if(!house){
-      getApp().toast("请先选择房屋",this.back)
+      getApp().toast("请先登录",this.back)
       return
     }
-    if(house.UseStatus !== 2){
-      getApp().toast("请先验证房屋", this.back)
-      return
-    }
+    // if(house.UseStatus !== 2){
+    //   getApp().toast("请先验证房屋", this.back)
+    //   return
+    // }
     cb && cb(house)
   },
   getOwnType(type) {

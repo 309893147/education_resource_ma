@@ -1,2 +1,44 @@
-<!--pages/index/help/index.wxml-->
-<text>pages/index/help/index.wxml</text>
+
+  <view class='menu flex-row h-padding flex-between bg-white color-two fix-top'>
+    <view wx:for='{{tabs}}' class='v-padding {{currentMenu.key==item.key?"border-b-primary":""}}' data-index="{{index}}" bindtap='onTab'>
+      {{item.name}}
+    </view>
+  </view>
+  <view style='height:2.8rem;'></view>
+  <view class='s-padding'>
+    <view hover-class='none' class='complaints-item bg-white s-padding vertical-space' style='border-radius:.25rem;' wx:for="{{currentMenu.list}}" bindtap='openItem' data-index="{{index}}">
+      <view class='flex-row align-center'>
+        <view class="flex-row flex-one align-center">
+          <!-- <view class='house-label'>投诉</view> -->
+          <view class='wk' style='width:7rem;overflow:hidden'>{{item.contentText}}</view>
+        </view>
+        <view class='color-one'>{{item.time}}</view>
+      </view>
+      <view class='flex-row'>
+        <view class='mt-top' wx:for="{{item.pic}}" wx:for-item="it" wx:if="{{item.pic && item.pic.length}}" style='margin-right:.4rem'>
+          <img clazz="img-one round" mode="aspectFill" src="{{it}}" wx:if="{{it}}"></img>
+        </view>
+      </view>
+      <view class='text-right color-primary'>
+        <block wx:if="{{item.status === 'CREATED' }}">未处理</block>
+        <block wx:if="{{item.status === 'ACCEPTED' }}">处理中</block>
+        <block wx:if="{{item.status === 'PROCESSING' }}">处理中</block>
+        <block wx:if="{{item.status === 'CLOSED' }}">已关闭</block>
+        <block wx:if="{{item.status === 'FINISH' }}">已完成</block>
+        <block wx:if="{{item.status === 'RATED' }}">已评价</block>
+        <block wx:if="{{item.status === 'CANCELED' }}">已取消</block>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{!currentMenu.list || !currentMenu.list.length}}" style='height:10rem;' class='center-text'>
+    <image mode="aspectFit" class="no-info" src="/r/no-info.png"></image>
+    <view class="no-info-color">
+      暂无求助信息
+    </view>
+  </view>
+<bottom>
+  <navigator class='inline' hover-class='none' url='/pages/index/help/add/index'>
+    <!-- <button class='color-white bg-primary radius-no'>添加报事</button> -->
+    <add title="添加求助"></add>
+  </navigator>
+</bottom>

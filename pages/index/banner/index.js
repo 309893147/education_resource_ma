@@ -1,6 +1,5 @@
 // pages/index/banner/index.js
-let WxParse = require('../../../wxParse/wxParse.js');
-require("../../../wxParse/wxParse.js")
+
 Page({
 
   /**
@@ -14,10 +13,17 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-      wx.setNavigationBarTitle({title:options.title})
-      let data = getApp().getUtil("store").get("banner")
-      
-    WxParse.wxParse('article', 'html', data.replace(/=\"\"/g, '').replace(/, \"/g, ''),this, 0);
+
+    this.setData({
+      url: options.url ? (getApp().gHost() + options.url) : null
+    })
+    if (this.data.url) {
+      return
+    }
+    wx.setNavigationBarTitle({
+      title: options.title
+    })
+    let data = getApp().getUtil("store").get("banner")
   },
 
   /**

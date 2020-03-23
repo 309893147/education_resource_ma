@@ -1,13 +1,17 @@
-// pages/index/notice/index.js
+
 Page({
 
   /**
    * Page initial data
    */
   data: {
-    list: [ ],
-      pagesize:20,
-      pageindex:1,
+    detail: {
+      title: "只做最走心的-环保装修攻略",
+      image: "https://pmcvariety.files.wordpress.com/2018/07/bradybunchhouse_sc11.jpg?w=1000&h=563&crop=1",
+      date: "2019-03-27  16:00:32",
+      readcount: 123,
+      content: "身份划分：房屋产权登记人、产权人家属、租客，依据手机号、姓名、房号与后台中预置的产权人信息进行自动校验，匹配认证。若自动认证失败，可致电客服中心协助认证或到客服中心前台协助认证；产权人家属、租客身份认证时需产权人验证通过，还需到客服中心或致电客服中心进行确认后方可认证完成；并且产权人可对认证在其房屋名下的用户进行管理。"
+    }
   },
 
   /**
@@ -15,28 +19,34 @@ Page({
    */
   onLoad: function (options) {
 
-      
+
+    this.data.id = options.id
+    this.data.url = wx.getStorageSync("message-detail-url")
+    this.markRead()
+  },
+  getMessage(e) {
+    console.log(e)
   },
 
   /**
    * Lifecycle function--Called when page is initially rendered
    */
-  getNotice(){
-    let pageindex = this.data.pageindex;
-    getApp().api.get("WxNoticeLine", { pageindex:pageindex}).then(it =>{
-       this.setData({list:it})
-    })
-  },
   onReady: function () {
 
   },
+  goBack() {
+    wx.navigateBack({
 
+    })
+  },
+  markRead() {
+    getApp().api.post("/ma/notice/read", { id: this.data.id }, true).then(it => { })
+  },
   /**
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-    getApp().checkHouse()
-    this.getNotice()
+
   },
 
   /**
@@ -50,7 +60,7 @@ Page({
    * Lifecycle function--Called when page unload
    */
   onUnload: function () {
-
+    wx.removeStorageSync("message-detail-url")
   },
 
   /**

@@ -226,13 +226,10 @@ Page({
   },
 
   handleContentInput(e) {
-    console.log(e)
-    // const value = e.detail.value
-    const value = e.detail.html
-    //要将图片的头http://*.*.*.去掉/at/g
-    this.data.content = value;
+    const value = e.detail.value
+    this.data.content = value
     this.data.contentCount = value.length
-    console.log(this.data.content)
+  
   },
 
   submitForm(e) {

@@ -10,7 +10,7 @@ let currentCity;
 
 function getHttpUrl() {
   if (environment === 'online') {
-    return 'http://localhost:8088'
+    return 'http://192.168.10.171:8088'
   }
   if (environment === 'public') {
     return 'http://2h713068n4.qicp.vip:55982'
@@ -40,7 +40,7 @@ function fetchData(url, payload, success, error, method, header) {
       wx.hideLoading()
       let data = res.data
       console.log(data)
-      if (data.code==200) {
+      if (data.code == 200 || data.code == 204) {
         success && success(data.data)
       } else{
         let msg = data.ErrorMessage || data.Result

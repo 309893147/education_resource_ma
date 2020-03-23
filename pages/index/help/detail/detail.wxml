@@ -1,0 +1,60 @@
+<view class='bg-white vertical-space s-padding font-size-three'>
+  <view class='vertical-space font-size-four wrap'>{{compliant.content}}</view>
+  <view class="vertical-space">
+    <view wx:for="{{compliant.imagesList}}">
+      <img src="{{item}}" mode="widthFix" wx:if="{{item}}"></img>
+    </view>
+  </view>
+  <view class="hint-text vertical-space ">
+    当前状态：
+    <text class="color-primary">
+     <block wx:if="{{compliant.status === 'CREATED' }}">未处理</block>
+      <block wx:if="{{compliant.status === 'ACCEPTED' }}">处理中</block>
+      <block wx:if="{{compliant.status === 'PROCESSING' }}">处理中</block>
+      <block wx:if="{{compliant.status === 'CLOSED' }}">已关闭</block>
+      <block wx:if="{{compliant.status === 'FINISH' }}">已完成</block>
+      <block wx:if="{{compliant.status === 'RATED' }}">已评价</block>
+      <block wx:if="{{compliant.status === 'CANCELED' }}">已取消</block>
+    </text>
+  </view>
+  <view class='hint-text'>提交时间: {{compliant.time}}</view>
+</view>
+<view class="bg-white s-padding  vertical-space" wx:if="{{compliant.assigneeName && compliant.handlerName}}">
+  <view class='flex-row v-padding' wx:if="{{compliant.assigneeName}}">
+    <view class='hint-text'>受理人:</view>
+    <view class='h-padding'>{{compliant.assigneeName}}</view>
+  </view>
+  <view class='flex-row v-padding' wx:if="{{compliant.handlerName}}">
+    <view class='hint-text'>处理人:</view>
+    <view class='h-padding'>{{compliant.handlerName}}</view>
+  </view>
+</view>
+<view class="bg-white s-padding vertical-space" wx:if="{{compliant.feedback && compliant.feedback.length}}">
+  <view class="vertical-space font-size-four">处理结果</view>
+  <view wx:for="{{compliant.feedback}}" class="flex-row vertical-space  flex-between">
+    <view>{{item.content}}</view>
+    <view class='color-primary'>
+      <block wx:if="{{item.status === 'ACCEPTED' }}">处理中</block>
+      <block wx:if="{{item.status === 'PROCESSING' }}">处理中</block>
+      <block wx:if="{{item.status === 'CLOSED' }}">已关闭</block>
+      <block wx:if="{{item.status === 'FINISHED' }}">已完成</block>
+    </view>
+  </view>
+</view>
+<view class='bg-white s-padding ' wx:if="{{compliant.events && compliant.events.length}}">
+  <view class='vertical-space font-size-four s-size'>处理过程</view>
+  <view wx:for="{{compliant.events}}" class="flex-row vertical-space  flex-between">
+    <view>{{item.content}}</view>
+    <view class='hint-text'>{{item.createTime}}</view>
+  </view>
+</view>
+<view style='height:6rem;'></view>
+<bottom>
+  <block wx:if="{{type === 'help'}}">
+    <view class='bg-primary text-white center-text  s-size action-bar' bindtap='callService' wx:if="{{compliant.status ==='FINISH'}}">立即评价</view>
+  </block>
+  <block wx:else>
+    <view class='bg-primary text-white center-text  s-size action-bar' bindtap='callService' wx:if="{{compliant.status ==='FINISH'}}">立即评价</view>
+  </block>
+  <view class='bg-primary text-white center-text  s-size action-bar' bindtap='cancel' wx:if="{{compliant.status == 'CREATED' }}">取消</view>
+</bottom>

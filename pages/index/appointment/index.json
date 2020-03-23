@@ -1,8 +1,0 @@
-{
-  "usingComponents": {
-    "tab":"/v/tab/index",
-    "add":"/v/add-button/index"
-  },
-  "navigationBarTitleText":"我的服务",
-  "enablePullDownRefresh": true
-}

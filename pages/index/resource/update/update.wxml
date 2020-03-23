@@ -22,16 +22,10 @@
     <image src='/r/circle_delete.png' class="icon arrow" style="position:absolute;right:-0.3rem;top:-0.3rem" bindtap='deleteImage' data-index="{{index}}"></image>
   </view>
   <view class='relative inline-block' style='height:3.75rem;width:3.75rem;margin-right:.6rem;margin-bottom:.6rem' wx:if="{{images.length < 3}}">
-    <image src='/r/add_image.png' class='icon' style='height:3.75rem;width:3.75rem;' bindtap='addImage'></image>
+    <image src='../../../r/add_image.png' class='icon' style='height:3.75rem;width:3.75rem;' bindtap='addImage'></image>
   </view>
 </view>
-<!--订阅消息-->
 
-<view class='s-padding'>
-  <view class=' hint-text wrap'>
-    您好，您的需求“小优”将尽快处理。“小优”的工作时间是上午9:00—下午18:00，非工作时间如有紧急事宜请致电客户服务中心。
-  </view>
-</view>
 <!--订阅消息-->
 <view class="s-padding">
   <view class="flex-row align-center">

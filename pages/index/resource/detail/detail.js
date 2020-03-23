@@ -1,6 +1,4 @@
 // pages/index/resource/detail/detail.js
-let WxParse = require('../../../../wxParse/wxParse.js');
-require("../../../../wxParse/wxParse.js")
 Page({
 
   /**
@@ -22,14 +20,10 @@ Page({
     me.getResourceComment(options.id)
 
     let data = getApp().getUtil("store").get("resource")
-    console.log(data)
-    WxParse.wxParse('article', 'html', data.replace(/=\"\"/g, '').replace(/, \"/g, ''), this, 0);
-
   },
 
   getResourceDetail(id){
     getApp().api.get("/resource/detail?id="+id).then(it => {
-      console.log(it)
       this.setData({
         resource: it
       })
@@ -41,7 +35,6 @@ Page({
       resourceId:id
     }
     getApp().api.get("/comment", params).then(it => {
-      console.log(it)
       this.setData({
         commentList: it.content
       })
@@ -122,10 +115,8 @@ Page({
 
 
   onReachBottom: function () {
-    // console.log("onReachBottom");
+   console.log("onReachBottom");
     var me = this;
-
-
     var currentPage = me.data.page;
     var totalpage = me.data.total;
     var records = me.data.records;

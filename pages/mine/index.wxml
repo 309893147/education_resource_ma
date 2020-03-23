@@ -16,50 +16,9 @@
       <image class='icon arrow' src='/r/arrow_right.png'></image>
     </view>
   </navigator>
-  <view class='flex-row align-bl space-between s-padding line-height-one'>
-    <view class='section-title bold'>我的资源</view>
-    <navigator class='color-primary' url='/pages/mine/house/index' hover-class='none'>
-      全部资源({{currentHouse.totalHouse || 0}})
-    </navigator>
-  </view>
-  <view class='h-padding' wx:if="{{currentHouse}}">
-    <view class='card round flex-row' bindtap='goHouseDetail'>
-      <view>
-        <view class='indicator'>
-          {{currentHouse.statusName}}
-        </view>
-      </view>
-      <view class='flex-one flex-row h-padding'>
-        <view class='flex-one flex-col space-between'>
-          <view>{{currentHouse.ovName}}</view>
-          <view class='sub-size hint-text'>{{currentHouse.bid+currentHouse.roomNum}}</view>
-        </view>
-        <view class='flex-one flex-col space-between sub-size'>
-          <view class='flex-row'>
-            <view class='hint-text right-space'>身份 </view>
-            <view>{{currentHouse.statusName}}</view>
-            <view class='cert {{currentHouse.UseStatus==2?"color-primary border-primary label-bg-primary":currentHouse.UseStatus==1?"color-yellow border-yellow label-bg-yellow":"color-red border-red label-bg-red"}}'>
-              {{currentHouse.userStatusName}}
-            </view>
-          </view>
-          <view class='flex-row'>
-            <view class='hint-text right-space'>人数 </view>
-            <view>{{currentHouse.SumNum}}人</view>
-          </view>
-        </view>
-      </view>
-      <view class='relative flex-row align-self-center'>
-        <image src='/r/arrow_right.png' class='icon arrow'></image>
-      </view>
-    </view>
-  </view>
-  <view wx:else class='h-padding'>
-    <view class='card round s-padding'>
-      <view class='hint-text'>暂无资源</view>
-    </view>
-  </view>
+
   <view class='s-padding'>
-    <view class='s-size section-title bold' style='margin-bottom:1.875rem;'>其他服务</view>
+    <view class='s-size section-title bold' style='margin-bottom:1.875rem;'>服务</view>
     <view class='flex-row align-center'>
 
       <!-- <view class='flex-one text-center'>
@@ -72,12 +31,19 @@
         <image src='/r/mine_face.png' class='icon service-icon'></image>
         <view>申请课堂后台</view>
       </view>
-       <view class='flex-one center-text'>
+
+      <view class='flex-one center-text'>
+        <navigator url='/pages/mine/resource/resource' hover-class='none'>
+          <image src='/r/mine_msg.png' class='icon service-icon'></image>
+          <view>我的资源</view>
+        </navigator>
+      </view>
+      <!-- <view class='flex-one center-text'>
         <navigator url='qa/index' hover-class='none'>
           <image src='/r/mine_qa.png' class='icon service-icon'></image>
           <view>常见问题</view>
         </navigator>
-      </view>
+      </view> -->
       <view class='flex-one center-text'>
         <navigator url='about/index' hover-class='none'>
           <image src='/r/mine_abount.png' class='icon service-icon'></image>
@@ -96,13 +62,13 @@
       </view> -->
     </view>
     <view class='flex-row' style='margin-top:1.75rem'>
-    <!-- <view class='flex-one center-text'>
+      <!-- <view class='flex-one center-text'>
         <navigator url='pay-record/index' hover-class='none'>
           <image src='/r/ic_pay_log.png' class='icon service-icon'></image>
           <view>缴费记录</view>
         </navigator>
       </view> -->
-     
+
 
       <view class='flex-one'></view>
     </view>
@@ -111,5 +77,5 @@
 
 <view class='text-center' wx:if="{{isMe}}">
   <view class='mt-top'>请登录后查看</view>
-    <button class='color-white bg-primary font-size-three' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">微信授权登陆</button>
+  <button class='color-white bg-primary font-size-three' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">微信授权登陆</button>
 </view>

@@ -4,10 +4,10 @@
   <view id="tapTest" data-id="{{item.id}}" data-content="{{item.content}}" bindtap="goDetailList">
     <view class="post-container">
       <text class='post-title'>{{item.title}}</text>
-      <text class='post-content'>{{item.description}}</text>
+      <text class='post-content '>{{item.content}}</text>
       <view class='tool'>
         <text class='post-date'>{{item.createTime}}</text>
-        <text class='post-views'>喜欢{{item.likes}}次</text>
+        <text class='post-views'>浏览{{item.clickNumber}}次</text>
         <view class='horizon'></view>
       </view>
     </view>

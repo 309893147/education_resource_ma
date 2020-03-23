@@ -16,25 +16,34 @@ const formatNumber = n => {
 
 module.exports = {
   formatTime: formatTime,
-  uploadImage(cb){
+  uploadImage(cb) {
     wx.chooseImage({
-      success: function(res) {
+      success: function (res) {
         wx.showLoading({
           title: '上传中...',
+          mask: true
         })
+        console.log(res)
         wx.uploadFile({
-          url: require("../api.js").getHttpUrl() +"/Handler/API.ashx?action=WxUpLoadAPI",
+          header: {
+            accessToken: wx.getStorageSync("accessToken")
+          },
+          url: require("../api.js").getHttpUrl() + "/api/upload",
           filePath: res.tempFilePaths[0],
-          name: 'image',
-          success(bb){
+          name: 'file',
+          success(bb) {
             wx.hideLoading()
             let data = bb.data
-            if(data){
+            if (data) {
               data = JSON.parse(bb.data)
             }
-            cb && cb(data.Result)
+            if (data.code !== 200) {
+              getApp().toast(data.msg)
+              return
+            }
+            cb && cb(data.data)
           },
-          fail(){
+          fail() {
             wx.hideLoading()
             getApp.toast("上传失败")
           }

@@ -1,9 +1,0 @@
-{
-  "usingComponents": {
-    "tab":"/v/tab/index",
-    "add":"/v/add-button/index",
-    "img": "/v/img/index"
-  },
-  "navigationBarTitleText":"我要吐槽",
-        "enablePullDownRefresh": true
-}

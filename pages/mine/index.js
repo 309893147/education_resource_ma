@@ -37,40 +37,45 @@ Page({
   },
 
   openManager(){
-    var me = this;
-    var id = app.getUser().data.data.id;
-    if (id) {
-      var serverUrl = app.serverUrl;
-      // 调用后端
-      wx.request({
-        url: serverUrl + '/manage/manager/user',
-        data:{
-          userId:id
-        } ,
-        method: "POST",
-        header: { 'content-type': 'application/x-www-form-urlencoded' },
-        success: function (res) {
-          console.log(res.data);
-          wx.hideLoading();
-          if (res.data.code == 200) {
-            wx.showToast({
-              title: '账号申请成功',
-              duration: 1500,
-              icon: "success",
-              success: function () {
-                setTimeout(function () {
-                  wx.navigateTo({
-                    url: '/pages/address/address',
-                  })
+
+    wx.navigateTo({
+      url: '/pages/mine/manager/manager',
+    })
+
+    // var me = this;
+    // var id = app.getUser().data.data.id;
+    // if (id) {
+    //   var serverUrl = app.serverUrl;
+    //   // 调用后端
+    //   wx.request({
+    //     url: serverUrl + '/manage/manager/user',
+    //     data:{
+    //       userId:id
+    //     } ,
+    //     method: "POST",
+    //     header: { 'content-type': 'application/x-www-form-urlencoded' },
+    //     success: function (res) {
+    //       console.log(res.data);
+    //       wx.hideLoading();
+    //       if (res.data.code == 200) {
+    //         wx.showToast({
+    //           title: '账号申请成功',
+    //           duration: 1500,
+    //           icon: "success",
+    //           success: function () {
+    //             setTimeout(function () {
+    //               wx.navigateTo({
+    //                 url: '/pages/address/address',
+    //               })
 
 
-                }, 1000)
-              }
-            })
-          }
-        }
-      })
-    } 
+    //             }, 1000)
+    //           }
+    //         })
+    //       }
+    //     }
+    //   })
+    // } 
 
   },
 
@@ -125,7 +130,7 @@ Page({
               success: function (res) {
                  console.log(res)
                 // //保存用户信息到本地缓存,可以用作小程序端的拦截器
-                wx.setStorageSync("currentUser", res.data.data.data)
+                wx.setStorageSync("currentUser", res.data.data)
                 wx.setStorageSync("accessToken", res.data.data.token)
 
                 me.setData({

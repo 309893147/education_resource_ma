@@ -1,6 +1,0 @@
-<!--pages/payment/status/index.wxml-->
-
-<view class='money-loading'>
-  <image class='icon-loading icon' src='/r/money_loading.png'></image>
-  <view class='mt-top'>您输入的缴费单位有误，请重新输入。</view>
-</view>
